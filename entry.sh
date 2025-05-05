@@ -15,9 +15,10 @@ echo "Installing Nix package manager..."
 if command -v nix &>/dev/null; then
     echo "Nix is already installed, skipping installation."
 else
+    export NIX_INSTALLER_DETERMINATE=false
+    export NIX_INSTALLER_NO_CONFIRM=true
     echo "Installing Nix..."
-    NIX_INSTALLER_NO_CONFIRM=true NIX_INSTALLER_DETERMINATE=false \
-        curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix |
+    curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix |
         sh -s -- install
 
     # Source nix environment if this is a fresh install
