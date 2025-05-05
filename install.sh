@@ -22,19 +22,22 @@ if [ -f "$HOME/Library/Preferences/MobileMeAccounts.plist" ]; then
 fi
 
 # Collect user information with fallbacks
-read -rp "Enter your first name [${icloud_first_name:=$current_user}]: " first_name
+read -rp "Enter your first name [${icloud_first_name:=$current_user}]: " first_name </dev/tty
 first_name=${first_name:-$icloud_first_name}
 
-read -rp "Enter your last name [${icloud_last_name}]: " last_name
+read -rp "Enter your last name [${icloud_last_name}]: " last_name </dev/tty
 last_name=${last_name:-$icloud_last_name}
 
-read -rp "Enter your desired hostname [${first_name}s-MacBook]: " hostname
-hostname=${hostname:-"${first_name}s-MacBook"}
+read -rp "Enter your desired hostname [${current_user}-MacBook]: " hostname </dev/tty
+while [[ -z "$hostname" || ! "$hostname" =~ ^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$ ]]; do
+    echo "Please enter a valid hostname."
+    read -rp "Enter your desired hostname [${current_user}-MacBook]: " hostname </dev/tty
+done
 
-read -rp "Enter your email: " email
+read -rp "Enter your email: " email </dev/tty
 while [[ -z "$email" || ! "$email" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ ]]; do
     echo "Please enter a valid email address."
-    read -rp "Enter your email: " email
+    read -rp "Enter your email: " email </dev/tty
 done
 
 # Update arguments.nix
@@ -63,7 +66,7 @@ echo "-----------------------------------------"
 echo "Installing nix-darwin and home-manager configurations..."
 
 # Run the configuration commands
-nix run nix-darwin/master#darwin-rebuild -- switch --flake "${SCRIPT_PATH}/nix-darwin#${hostname}" --impure || (echo "Running darwin-rebuild failed. Please check the logs for details, and try again." && exit 1)
+nix run nix-darwin/master#darwin-rebuild -- switch --flake "${SCRIPT_PATH}/nix-darwin#${hostname}" --impure
 
 sudo launchctl bootout system /Library/LaunchDaemons/org.nixos.activate-system.plist
 sudo launchctl bootstrap system /Library/LaunchDaemons/org.nixos.activate-system.plist
@@ -71,6 +74,6 @@ sudo launchctl bootstrap system /Library/LaunchDaemons/org.nixos.activate-system
 # Disable this line if you didn't install Xcode
 sudo xcodebuild -license accept
 
-nix run home-manager/master#home-manager -- switch --flake "${SCRIPT_PATH}/home-manager" --impure || (echo "Running home-manager switch failed. Please check the logs for details, and try again." && exit 1)
+nix run home-manager/master#home-manager -- switch --flake "${SCRIPT_PATH}/home-manager" --impure
 
 echo "Installation complete! Your MacOS has been configured successfully."
