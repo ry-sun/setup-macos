@@ -1,0 +1,12 @@
+[
+  "font-inconsolata"
+  "font-jetbrains-mono"
+  "font-jetbrains-mono-nerd-font"
+  "font-lxgw-wenkai"
+  "font-lxgw-wenkai-tc"
+  "font-noto-sans-sc"
+  "font-noto-sans-tc"
+  "font-noto-serif-sc"
+  "font-noto-serif-tc"
+  "font-times-newer-roman"
+]

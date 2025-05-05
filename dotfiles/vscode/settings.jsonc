@@ -1,0 +1,376 @@
+{
+    // Cursor
+    "cursor.cpp.disabledLanguages": [],
+    // Text Editor
+    "editor.codeActions.triggerOnFocusChange": true,
+    "editor.codeActionsOnSave": {
+        "source.convertImportFormat": "always",
+        "source.fixAll": "always",
+        "source.fixAll.biome": "always",
+        "source.fixAll.pylance": "always",
+        "source.organizeImports.biome": "always",
+        "source.unusedImports": "always"
+    },
+    "editor.codeLensFontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font Propo', Menlo, Monaco, 'Courier New', monospace",
+    "editor.experimental.preferTreeSitter.css": true,
+    "editor.experimental.preferTreeSitter.ini": true,
+    "editor.experimental.preferTreeSitter.regex": true,
+    "editor.experimental.treeSitterTelemetry": true,
+    "editor.experimental.preferTreeSitter.typescript": true,
+    "editor.experimentalEditContextEnabled": true,
+    "editor.lineNumbers": "relative",
+    "editor.rulers": [
+        80,
+        100,
+        120,
+        140
+    ],
+    "editor.wordBreak": "keepAll",
+    "editor.wordWrapColumn": 90,
+    // Text Editor: Cursorg
+    "editor.cursorBlinking": "smooth",
+    // Text Editor: Find
+    "editor.find.autoFindInSelection": "multiline",
+    // Text Editor: Font
+    "editor.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font Propo', Monaco, 'Courier New', monospace",
+    "editor.fontSize": 13,
+    "editor.fontLigatures": true,
+    // Text Editor: Formatting
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    // Text Editor: DIff Editor
+    "diffEditor.codeLens": true,
+    "diffEditor.experimental.showMoves": true,
+    "diffEditor.experimental.useTrueInlineView": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    // Text Editor: Minimap
+    "editor.minimap.autohide": true,
+    "editor.minimap.maxColumn": 100,
+    // Text Editor: Files
+    "files.autoGuessEncoding": true,
+    "files.autoSave": "onFocusChange",
+    "files.autoSaveWorkspaceFilesOnly": true,
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    // WorkBench: Appearance
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Andromeda Bordered",
+    "window.autoDetectHighContrast": false,
+    // Features: Search
+    "search.smartCase": true,
+    "search.showLineNumbers": true,
+    "search.useGlobalIgnoreFiles": true,
+    // Features: Terminal
+    "terminal.external.osxExec": "iTerm2.app",
+    "terminal.integrated.defaultProfile.osx": "zsh (2)",
+    "terminal.integrated.enableImages": true,
+    "terminal.integrated.fontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font Propo', Menlo, Monaco, 'Courier New', monospace",
+    "terminal.integrated.fontLigatures.enabled": true,
+    "terminal.integrated.fontSize": 13,
+    // Extension: Biome
+    "biome.rename": true,
+    // Extension: Black Formatter
+    "black-formatter.importStrategy": "fromEnvironment",
+    // Extension: Even Better TOML
+    "evenBetterToml.formatter.columnWidth": 120,
+    "evenBetterToml.formatter.allowedBlankLines": 1,
+    // Extension: Git
+    "git.alwaysSignOff": true,
+    "git.autofetch": true,
+    "git.blame.editorDecoration.enabled": true,
+    "git.fetchOnPull": true,
+    // Extension: Github Copilot Chat
+    "github.copilot.chat.codesearch.enabled": true,
+    "github.copilot.chat.agent.thinkingTool": true,
+    "github.copilot.chat.completionContext.typescript.mode": "sidecar",
+    "github.copilot.chat.editor.temporalContext.enabled": true,
+    "github.copilot.chat.edits.temporalContext.enabled": true,
+    "github.copilot.chat.generateTests.codeLens": true,
+    "github.copilot.chat.languageContext.fix.typescript.enabled": true,
+    "github.copilot.chat.languageContext.typescript.enabled": true,
+    "github.copilot.chat.languageContext.inline.typescript.enabled": true,
+    // Extension: Github Pull Requests
+    "githubPullRequests.defaultMergeMethod": "squash",
+    "githubPullRequests.terminalLinksHandler": "github",
+    // Extension: IntelliCode
+    "vsintellicode.java.completionsEnabled": false,
+    // Extension: Isort
+    "isort.check": true,
+    "isort.importStrategy": "fromEnvironment",
+    // Extension: Json
+    "json.format.enable": false,
+    "json.validate.enable": false,
+    // Extension: Latex
+    "latex-workshop.bibtex-fields.sort.enabled": true,
+    "latex-workshop.bibtex-fields.order": [
+        "title",
+        "year",
+        "author"
+    ],
+    "latex-workshop.bibtex-format.sort.enabled": true,
+    "latex-workshop.bibtex-format.sortby": [
+        "year-desc",
+        "title",
+        "author"
+    ],
+    "latex-workshop.bibtex-format.trailingComma": true,
+    "latex-workshop.bibtex.maxFileSize": 10,
+    "latex-workshop.formatting.latex": "latexindent",
+    "latex-workshop.formatting.latexindent.args": [
+        "-l",
+        "%WORKSPACE_FOLDER%/latexindent.yaml",
+        "-m",
+        "-c",
+        "%DIR%/",
+        "%TMPFILE%"
+    ],
+    "latex-workshop.formatting.tex-fmt.args": [],
+    "latex-workshop.intellisense.citation.backend": "biblatex",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.autoClean.run": "onSucceeded",
+    "latex-workshop.latex.clean.subfolder.enabled": true,
+    "latex-workshop.latex.magic.args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-recorder",
+        "%DOC%"
+    ],
+    "latex-workshop.latex.magic.bib.args": [
+        "--output-directory=%OUTDIR%",
+        "%DOCFILE%"
+    ],
+    "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/out",
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "Latexmk (LuaLaTeX)",
+            "tools": [
+                "lualatexmk"
+            ]
+        },
+        {
+            "name": "Latexmk (PDFLaTeX)",
+            "tools": [
+                "pdflatexmk"
+            ]
+        },
+        {
+            "name": "Biber",
+            "tools": [
+                "biber"
+            ]
+        },
+        {
+            "name": "BibTeX",
+            "tools": [
+                "bibtex"
+            ]
+        },
+        {
+            "name": "LuaLaTeX ➞ Biber ➞ LuaLaTeX × 2",
+            "tools": [
+                "lualatexmk",
+                "biber",
+                "lualatexmk",
+                "lualatexmk"
+            ]
+        },
+        {
+            "name": "PDFLaTeX ➞ Biber ➞ PDFLaTeX × 2",
+            "tools": [
+                "pdflatexmk",
+                "biber",
+                "pdflatexmk",
+                "pdflatexmk"
+            ]
+        },
+        {
+            "name": "LuaLaTeX ➞ BibTeX ➞ LuaLaTeX × 2",
+            "tools": [
+                "lualatexmk",
+                "bibtex",
+                "lualatexmk",
+                "lualatexmk"
+            ]
+        },
+        {
+            "name": "PDFLaTeX ➞ BibTeX ➞ PDFLaTeX × 2",
+            "tools": [
+                "pdflatexmk",
+                "bibtex",
+                "pdflatexmk",
+                "pdflatexmk"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatexmk",
+            "command": "latexmk",
+            "args": [
+                "-pdflatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-recorder",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {
+                "TEXINPUTS": ".:%WORKSPACE_FOLDER%/style:%WORKSPACE_FOLDER%/assets:"
+            }
+        },
+        {
+            "name": "lualatexmk",
+            "command": "latexmk",
+            "args": [
+                "-lualatex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-recorder",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {
+                "TEXINPUTS": ".:%WORKSPACE_FOLDER%/style:%WORKSPACE_FOLDER%/assets:"
+            }
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%OUTDIR%/%DOCFILE%.bcf"
+            ],
+            "env": {
+                "TEXINPUTS": ".:%WORKSPACE_FOLDER%/style:%WORKSPACE_FOLDER%/assets:"
+            }
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%OUTDIR%/%DOCFILE%.bcf"
+            ],
+            "env": {
+                "TEXINPUTS": ".:%WORKSPACE_FOLDER%/style:%WORKSPACE_FOLDER%/assets:"
+            }
+        }
+    ],
+    "latex-workshop.linting.chktex.enabled": true,
+    "latex-workshop.linting.chktex.exec.args": [
+        "-l",
+        "%WORKSPACE_FOLDER%/.chktexrc"
+    ],
+    "latex-workshop.linting.lacheck.enabled": true,
+    "latex-workshop.linting.run": "onType",
+    "latex-workshop.mathpreviewpanel.cursor.enabled": true,
+    // Extension: Lazygit
+    "lazygit-vscode.autoMaximizeWindow": true,
+    // Extensino: Markdown All in One
+    "markdown.extension.toc.levels": "2..6",
+    // Extension: path-intelligence
+    "path-intellisense.autoSlashAfterDirectory": true,
+    "path-intellisense.autoTriggerNextSuggestion": true,
+    "path-intellisense.extensionOnImport": true,
+    // Extension: Pylance
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.supportDocstringTemplate": true,
+    // Extension: Python Debugger
+    "debugpy.showPythonInlineValues": true,
+    // Extension: Python Docstring Generator configuration
+    "autoDocstring.docstringFormat": "pep257",
+    // Extension: Rust analyzer
+    "rust-analyzer.showSyntaxTree": true,
+    "rust-analyzer.diagnostics.experimental.enable": true,
+    "rust-analyzer.diagnostics.previewRustcOutput": true,
+    "rust-analyzer.diagnostics.styleLints.enable": true,
+    "rust-analyzer.assist.emitMustUse": true,
+    "rust-analyzer.completion.fullFunctionSignatures.enable": true,
+    "rust-analyzer.completion.hideDeprecated": true,
+    "rust-analyzer.imports.preferNoStd": true,
+    "rust-analyzer.lens.references.enumVariant.enable": true,
+    "rust-analyzer.lens.references.method.enable": true,
+    "rust-analyzer.lens.references.trait.enable": true,
+    "rust-analyzer.rustfmt.rangeFormatting.enable": true,
+    // Extension: TypeScript
+    "javascript.referencesCodeLens.enabled": true,
+    "javascript.referencesCodeLens.showOnAllFunctions": true,
+    "javascript.preferences.importModuleSpecifierEnding": "js",
+    // Extension: Others
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    // Language Specification
+    "[css][scss][html][json][javascript][javascriptreact][typescript][typescriptreact]": {
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false,
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[jsonc]": {
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false,
+        "editor.defaultFormatter": "j-brooke.fracturedjsonvsc",
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+    },
+    "[latex]": {
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false,
+        "editor.formatOnPaste": true
+    },
+    "[markdown]": {
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false,
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        },
+        "cSpell.fixSpellingWithRenameProvider": true,
+        "cSpell.advanced.feature.useReferenceProviderWithRename": true,
+        "cSpell.advanced.feature.useReferenceProviderRemove": "/^#+\\s/"
+    },
+    "[makefile]": {
+        "editor.insertSpaces": false
+    },
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultColorDecorators": "never",
+        "gitlens.codeLens.symbolScopes": [
+            "!Module"
+        ],
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": "off"
+    },
+    "[shellscript]": {
+        "editor.insertSpaces": false,
+        "files.eol": "\n",
+        "editor.defaultColorDecorators": "never"
+    },
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+    "[yaml][yml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.autoIndent": "keep",
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultColorDecorators": "never",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        }
+    }
+}

@@ -1,0 +1,36 @@
+auto_activate_base: false
+auto_update_conda: true
+
+channels:
+  - conda-forge
+  - defaults
+channel_priority: flexible
+
+ssl_verify: true
+show_channel_urls: true
+report_errors: true
+
+force_reinstall: true
+create_default_packages:
+  - pip
+  - virtualvenv
+  - ipython
+  - ipdb
+  - jupyter
+  - jupyterlab
+  - jupyter-lsp
+  - jupyterlab-lsp
+  - numpy
+  - matplotlib
+  - pandas
+  - rich
+  - tqdm
+  - pre-commit
+  - isort
+  - black
+  - black-jupyter
+  - pylint
+  - pyright
+  - ruff
+  - pyenchant
+  - enchant
