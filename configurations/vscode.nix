@@ -30,7 +30,7 @@
   home.activation.installCursorExtensions = lib.hm.dag.entryAfter [ "installVscodeExtensions" ] ''
     echo "Running install Cursor Extensions step..." | tee -a ~/hm-activation.log
 
-    export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+    export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/sbin:$PATH"
 
     installed_extensions=$(cursor --list-extensions)
     for extension in $(cat "${builtins.toString ../dotfiles/vscode/extensions.txt}"); do
