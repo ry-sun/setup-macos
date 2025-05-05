@@ -46,6 +46,6 @@ fi
 # Run the installation script
 echo "Running installation script..."
 chmod +x "$REPO_PATH/install.sh"
-"$REPO_PATH/install.sh"
+bash "$REPO_PATH/install.sh" || (echo "The installation script failed. Please check the logs for details, and try again." && exit 1)
 
 echo "Setup completed successfully!"

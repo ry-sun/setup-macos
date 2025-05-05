@@ -63,10 +63,14 @@ echo "-----------------------------------------"
 echo "Installing nix-darwin and home-manager configurations..."
 
 # Run the configuration commands
-nix run nix-darwin/master#darwin-rebuild -- switch --flake "${SCRIPT_PATH}/nix-darwin#${hostname}" --impure
-nix run home-manager/master#home-manager -- switch --flake "${SCRIPT_PATH}/home-manager" --impure
+nix run nix-darwin/master#darwin-rebuild -- switch --flake "${SCRIPT_PATH}/nix-darwin#${hostname}" --impure || (echo "Running darwin-rebuild failed. Please check the logs for details, and try again." && exit 1)
 
 sudo launchctl bootout system /Library/LaunchDaemons/org.nixos.activate-system.plist
 sudo launchctl bootstrap system /Library/LaunchDaemons/org.nixos.activate-system.plist
+
+# Disable this line if you didn't install Xcode
+sudo xcodebuild -license accept
+
+nix run home-manager/master#home-manager -- switch --flake "${SCRIPT_PATH}/home-manager" --impure || (echo "Running home-manager switch failed. Please check the logs for details, and try again." && exit 1)
 
 echo "Installation complete! Your MacOS has been configured successfully."

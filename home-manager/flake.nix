@@ -18,7 +18,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeConfigurations."whoami" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."${args.user}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
