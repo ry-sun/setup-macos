@@ -99,7 +99,7 @@ handle_extension() {
 
     ## CSV
     csv)
-        head -n 500 "$path" | csvlook && exit 0
+        head -n 500 "${FILE_PATH}" | csvlook && exit 5
         python3 -c "import pandas as pd; print(pd.read_csv('${FILE_PATH}').to_markdown())" && exit 5
         exit 2
         ;;
@@ -368,7 +368,7 @@ handle_mime() {
 
     ## CSV
     */csv)
-        head -n 500 "$path" | csvlook && exit 0
+        head -n 500 "${FILE_PATH}" | csvlook && exit 5
         python3 -c "import pandas as pd; print(pd.read_csv('${FILE_PATH}').to_markdown())" && exit 5
         exit 2
         ;;
@@ -464,8 +464,22 @@ handle_mime() {
         exit 2
         ;;
 
+    ## Executables and shared objects
+    application/x-executable | application/x-pie-executable | \
+        application/x-sharedlib | application/x-mach-binary)
+        echo "ldd: ${FILE_PATH}" && ldd "${FILE_PATH}"
+        if [[ -x "$(command -v patchelf)" ]]; then
+            echo
+            echo "RPATH: $(patchelf --print-rpath "${FILE_PATH}" | sed 's|:|\n       |g')"
+        fi
+        objdump --demangle --syms "${FILE_PATH}" && exit 5
+        readelf -WCa "${FILE_PATH}" && exit 5
+        nm --demangle "${FILE_PATH}" && exit 5
+        exit 1
+        ;;
+
     ## Text
-    text/* | */xml)
+    text/* | application/* | */xml)
         ## Syntax highlight
         if [[ "$(stat --printf='%s' -- "${FILE_PATH}")" -gt "${HIGHLIGHT_SIZE_MAX}" ]]; then
             exit 2
@@ -512,19 +526,6 @@ handle_mime() {
         exit 1
         ;;
 
-    ## Executables and shared objects
-    application/x-executable | application/x-pie-executable | \
-        application/x-sharedlib | application/x-mach-binary)
-        echo "ldd: ${FILE_PATH}" && ldd "${FILE_PATH}"
-        if [[ -x "$(command -v patchelf)" ]]; then
-            echo
-            echo "RPATH: $(patchelf --print-rpath "${FILE_PATH}" | sed 's|:|\n       |g')"
-        fi
-        objdump --demangle --syms "${FILE_PATH}" && exit 5
-        readelf -WCa "${FILE_PATH}" && exit 5
-        nm --demangle "${FILE_PATH}" && exit 5
-        exit 1
-        ;;
     esac
 }
 

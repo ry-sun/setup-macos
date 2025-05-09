@@ -117,6 +117,7 @@ pkgs: with pkgs; [
   python313
   python313Packages.ipython
   python313Packages.nbconvert
+  python313Packages.pygments
 
   ## Swift
   swiftlint
