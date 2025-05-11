@@ -1,6 +1,12 @@
 {
     // Cursor
     "cursor.cpp.disabledLanguages": [],
+    "cursor.cpp.enablePartialAccepts": true,
+    "cursor.composer.collapsePaneInputBoxPills": true,
+    "cursor.composer.shouldAllowCustomModes": true,
+    "cursor.composer.shouldChimeAfterChatFinishes": true,
+    "cursor.diffs.useCharacterLevelDiffs": true,
+    "cursor.terminal.usePreviewBox": true,
     // Text Editor
     "editor.codeActions.triggerOnFocusChange": true,
     "editor.codeActionsOnSave": {
