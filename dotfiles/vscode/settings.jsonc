@@ -304,6 +304,8 @@
     "javascript.referencesCodeLens.enabled": true,
     "javascript.referencesCodeLens.showOnAllFunctions": true,
     "javascript.preferences.importModuleSpecifierEnding": "js",
+    // Extension: YAML
+    "redhat.telemetry.enabled": true,
     // Extension: Others
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
