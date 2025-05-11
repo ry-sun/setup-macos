@@ -148,5 +148,6 @@ pkgs: with pkgs; [
 
   ## Lint & Format
   pre-commit
+  addlicense
   enchant
 ]
