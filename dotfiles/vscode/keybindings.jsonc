@@ -3,5 +3,13 @@
     {
         "key": "ctrl+s",
         "command": "workbench.action.files.save"
+    },
+    {
+        "key": "ctrl+cmd+l",
+        "command": "lazygit-vscode.toggle"
+    },
+    {
+        "key": "shift+cmd+l",
+        "command": "-lazygit-vscode.toggle"
     }
 ]
