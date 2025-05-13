@@ -4,9 +4,11 @@ alefragnani.read-only-indicator
 alefragnani.separators
 asvetliakov.vscode-neovim
 biomejs.biome
+bradlc.vscode-tailwindcss
 charliermarsh.ruff
 christian-kohler.path-intellisense
 davidanson.vscode-markdownlint
+dejmedus.tailwind-sorter
 donjayamanne.githistory
 dsznajder.es7-react-js-snippets
 dustypomerleau.rust-syntax
@@ -67,6 +69,7 @@ rust-lang.rust-analyzer
 ryu1kn.partial-diff
 shardulm94.trailing-spaces
 simonsiefke.svg-preview
+stivo.tailwind-fold
 streetsidesoftware.code-spell-checker
 sumneko.lua
 sweetpad.sweetpad

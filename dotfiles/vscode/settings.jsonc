@@ -10,12 +10,12 @@
     // Text Editor
     "editor.codeActions.triggerOnFocusChange": true,
     "editor.codeActionsOnSave": {
-        "source.convertImportFormat": "always",
-        "source.fixAll": "always",
-        "source.fixAll.biome": "always",
-        "source.fixAll.pylance": "always",
+        "source.convertImportFormat"  : "always",
+        "source.fixAll"               : "always",
+        "source.fixAll.biome"         : "always",
+        "source.fixAll.pylance"       : "always",
         "source.organizeImports.biome": "always",
-        "source.unusedImports": "always"
+        "source.unusedImports"        : "always"
     },
     "editor.codeLensFontFamily": "'JetBrains Mono', 'JetBrainsMono Nerd Font Propo', Menlo, Monaco, 'Courier New', monospace",
     "editor.experimental.preferTreeSitter.css": true,
@@ -25,12 +25,7 @@
     "editor.experimental.preferTreeSitter.typescript": true,
     "editor.experimentalEditContextEnabled": true,
     "editor.lineNumbers": "relative",
-    "editor.rulers": [
-        80,
-        100,
-        120,
-        140
-    ],
+    "editor.rulers": [80, 100, 120, 140],
     "editor.wordBreak": "keepAll",
     "editor.wordWrapColumn": 90,
     // Text Editor: Cursorg
@@ -108,26 +103,18 @@
     "json.validate.enable": false,
     // Extension: Latex
     "latex-workshop.bibtex-fields.sort.enabled": true,
-    "latex-workshop.bibtex-fields.order": [
-        "title",
-        "year",
-        "author"
-    ],
+    "latex-workshop.bibtex-fields.order": ["title", "year", "author"],
     "latex-workshop.bibtex-format.sort.enabled": true,
-    "latex-workshop.bibtex-format.sortby": [
-        "year-desc",
-        "title",
-        "author"
-    ],
+    "latex-workshop.bibtex-format.sortby": ["year-desc", "title", "author"],
     "latex-workshop.bibtex-format.trailingComma": true,
     "latex-workshop.bibtex.maxFileSize": 10,
     "latex-workshop.formatting.latex": "latexindent",
     "latex-workshop.formatting.latexindent.args": [
-        "-l",
+        "-l"                                 ,
         "%WORKSPACE_FOLDER%/latexindent.yaml",
-        "-m",
-        "-c",
-        "%DIR%/",
+        "-m"                                 ,
+        "-c"                                 ,
+        "%DIR%/"                             ,
         "%TMPFILE%"
     ],
     "latex-workshop.formatting.tex-fmt.args": [],
@@ -136,10 +123,10 @@
     "latex-workshop.latex.autoClean.run": "onSucceeded",
     "latex-workshop.latex.clean.subfolder.enabled": true,
     "latex-workshop.latex.magic.args": [
-        "-synctex=1",
+        "-synctex=1"              ,
         "-interaction=nonstopmode",
-        "-file-line-error",
-        "-recorder",
+        "-file-line-error"        ,
+        "-recorder"               ,
         "%DOC%"
     ],
     "latex-workshop.latex.magic.bib.args": [
@@ -149,65 +136,25 @@
     "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/out",
     "latex-workshop.latex.recipe.default": "lastUsed",
     "latex-workshop.latex.recipes": [
-        {
-            "name": "Latexmk (LuaLaTeX)",
-            "tools": [
-                "lualatexmk"
-            ]
-        },
-        {
-            "name": "Latexmk (PDFLaTeX)",
-            "tools": [
-                "pdflatexmk"
-            ]
-        },
-        {
-            "name": "Biber",
-            "tools": [
-                "biber"
-            ]
-        },
-        {
-            "name": "BibTeX",
-            "tools": [
-                "bibtex"
-            ]
-        },
+        { "name": "Latexmk (LuaLaTeX)", "tools": ["lualatexmk"] },
+        { "name": "Latexmk (PDFLaTeX)", "tools": ["pdflatexmk"] },
+        { "name": "Biber", "tools": ["biber"] },
+        { "name": "BibTeX", "tools": ["bibtex"] },
         {
             "name": "LuaLaTeX ➞ Biber ➞ LuaLaTeX × 2",
-            "tools": [
-                "lualatexmk",
-                "biber",
-                "lualatexmk",
-                "lualatexmk"
-            ]
+            "tools": ["lualatexmk", "biber", "lualatexmk", "lualatexmk"]
         },
         {
             "name": "PDFLaTeX ➞ Biber ➞ PDFLaTeX × 2",
-            "tools": [
-                "pdflatexmk",
-                "biber",
-                "pdflatexmk",
-                "pdflatexmk"
-            ]
+            "tools": ["pdflatexmk", "biber", "pdflatexmk", "pdflatexmk"]
         },
         {
             "name": "LuaLaTeX ➞ BibTeX ➞ LuaLaTeX × 2",
-            "tools": [
-                "lualatexmk",
-                "bibtex",
-                "lualatexmk",
-                "lualatexmk"
-            ]
+            "tools": ["lualatexmk", "bibtex", "lualatexmk", "lualatexmk"]
         },
         {
             "name": "PDFLaTeX ➞ BibTeX ➞ PDFLaTeX × 2",
-            "tools": [
-                "pdflatexmk",
-                "bibtex",
-                "pdflatexmk",
-                "pdflatexmk"
-            ]
+            "tools": ["pdflatexmk", "bibtex", "pdflatexmk", "pdflatexmk"]
         }
     ],
     "latex-workshop.latex.tools": [
@@ -215,12 +162,12 @@
             "name": "pdflatexmk",
             "command": "latexmk",
             "args": [
-                "-pdflatex",
-                "-synctex=1",
+                "-pdflatex"               ,
+                "-synctex=1"              ,
                 "-interaction=nonstopmode",
-                "-file-line-error",
-                "-recorder",
-                "-outdir=%OUTDIR%",
+                "-file-line-error"        ,
+                "-recorder"               ,
+                "-outdir=%OUTDIR%"        ,
                 "%DOC%"
             ],
             "env": {
@@ -231,12 +178,12 @@
             "name": "lualatexmk",
             "command": "latexmk",
             "args": [
-                "-lualatex",
-                "-synctex=1",
+                "-lualatex"               ,
+                "-synctex=1"              ,
                 "-interaction=nonstopmode",
-                "-file-line-error",
-                "-recorder",
-                "-outdir=%OUTDIR%",
+                "-file-line-error"        ,
+                "-recorder"               ,
+                "-outdir=%OUTDIR%"        ,
                 "%DOC%"
             ],
             "env": {
@@ -246,9 +193,7 @@
         {
             "name": "biber",
             "command": "biber",
-            "args": [
-                "%OUTDIR%/%DOCFILE%.bcf"
-            ],
+            "args": ["%OUTDIR%/%DOCFILE%.bcf"],
             "env": {
                 "TEXINPUTS": ".:%WORKSPACE_FOLDER%/style:%WORKSPACE_FOLDER%/assets:"
             }
@@ -256,9 +201,7 @@
         {
             "name": "bibtex",
             "command": "bibtex",
-            "args": [
-                "%OUTDIR%/%DOCFILE%.bcf"
-            ],
+            "args": ["%OUTDIR%/%DOCFILE%.bcf"],
             "env": {
                 "TEXINPUTS": ".:%WORKSPACE_FOLDER%/style:%WORKSPACE_FOLDER%/assets:"
             }
@@ -266,7 +209,7 @@
     ],
     "latex-workshop.linting.chktex.enabled": true,
     "latex-workshop.linting.chktex.exec.args": [
-        "-l",
+        "-l"                          ,
         "%WORKSPACE_FOLDER%/.chktexrc"
     ],
     "latex-workshop.linting.lacheck.enabled": true,
@@ -300,6 +243,8 @@
     "rust-analyzer.lens.references.method.enable": true,
     "rust-analyzer.lens.references.trait.enable": true,
     "rust-analyzer.rustfmt.rangeFormatting.enable": true,
+    // Extension: Tailwind Fold Settings
+    "tailwind-fold.unfoldIfLineSelected": true,
     // Extension: TypeScript
     "javascript.referencesCodeLens.enabled": true,
     "javascript.referencesCodeLens.showOnAllFunctions": true,
@@ -307,9 +252,7 @@
     // Extension: YAML
     "redhat.telemetry.enabled": true,
     // Extension: Others
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
-    },
+    "extensions.experimental.affinity": {"asvetliakov.vscode-neovim": 1},
     // Language Specification
     "[css][scss][html][json][javascript][javascriptreact][typescript][typescriptreact]": {
         "editor.tabSize": 2,
@@ -320,9 +263,7 @@
         "editor.tabSize": 2,
         "editor.detectIndentation": false,
         "editor.defaultFormatter": "j-brooke.fracturedjsonvsc",
-        "editor.quickSuggestions": {
-            "strings": true
-        },
+        "editor.quickSuggestions": {"strings": true},
         "editor.suggest.insertMode": "replace"
     },
     "[latex]": {
@@ -340,23 +281,19 @@
         "editor.wordWrap": "on",
         "editor.quickSuggestions": {
             "comments": "off",
-            "strings": "off",
-            "other": "off"
+            "strings" : "off",
+            "other"   : "off"
         },
         "cSpell.fixSpellingWithRenameProvider": true,
         "cSpell.advanced.feature.useReferenceProviderWithRename": true,
         "cSpell.advanced.feature.useReferenceProviderRemove": "/^#+\\s/"
     },
-    "[makefile]": {
-        "editor.insertSpaces": false
-    },
+    "[makefile]": {"editor.insertSpaces": false},
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff",
         "diffEditor.ignoreTrimWhitespace": false,
         "editor.defaultColorDecorators": "never",
-        "gitlens.codeLens.symbolScopes": [
-            "!Module"
-        ],
+        "gitlens.codeLens.symbolScopes": ["!Module"],
         "editor.formatOnType": true,
         "editor.wordBasedSuggestions": "off"
     },
@@ -365,9 +302,7 @@
         "files.eol": "\n",
         "editor.defaultColorDecorators": "never"
     },
-    "[toml]": {
-        "editor.defaultFormatter": "tamasfe.even-better-toml"
-    },
+    "[toml]": {"editor.defaultFormatter": "tamasfe.even-better-toml"},
     "[yaml][yml]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
@@ -376,9 +311,9 @@
         "diffEditor.ignoreTrimWhitespace": false,
         "editor.defaultColorDecorators": "never",
         "editor.quickSuggestions": {
-            "other": true,
+            "other"   : true ,
             "comments": false,
-            "strings": true
+            "strings" : true
         }
     }
 }
