@@ -97,6 +97,7 @@ pkgs: with pkgs; [
 
   ## Utils
   coreutils-full
+  darwin.libiconv
   ncurses
   reattach-to-user-namespace
 
