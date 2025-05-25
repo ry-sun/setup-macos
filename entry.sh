@@ -25,6 +25,9 @@ else
     if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
         . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
     fi
+
+    sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+    sudo nix-channel --update
 fi
 
 # Clone the repository
