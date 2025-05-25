@@ -33,6 +33,7 @@
     ../configurations/bash.nix
     ../configurations/bat.nix
     ../configurations/btop.nix
+    ../configurations/c.nix
     ../configurations/clcokRs.nix
     ../configurations/editorconfig.nix
     ../configurations/eza.nix
