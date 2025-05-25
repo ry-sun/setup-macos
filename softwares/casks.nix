@@ -3,9 +3,6 @@
   "cursor"
   "visual-studio-code"
 
-  # TexLive
-  "mactex"
-
   # Python
   "miniforge"
 

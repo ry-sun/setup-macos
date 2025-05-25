@@ -143,8 +143,11 @@ pkgs: with pkgs; [
   sqlite
   sqlite-utils
 
-  # Ruby
+  ## Ruby
   ruby
+
+  ## Tex
+  texliveFull
 
   ## Lint & Format
   pre-commit

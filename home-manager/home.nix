@@ -71,6 +71,6 @@
   home.sessionPath = [
     "$BUN_PATH"
     "$CARGO_PATH"
-    "$TEX_PATH"
+    "$HOME/.local/bin"
   ];
 }
