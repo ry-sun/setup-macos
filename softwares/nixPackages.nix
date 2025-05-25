@@ -7,7 +7,7 @@ pkgs: with pkgs; [
 
   # Developer Tools
   ## Github Related
-  git # Github
+  gitFull
   git-lfs # LFS support
   hub
   git-extras
@@ -70,7 +70,6 @@ pkgs: with pkgs; [
 
   ## Table (csv, xls, xlsx) Tools
   xlsx2csv
-  libxls
   csvkit
 
   ## Image & Video Tools

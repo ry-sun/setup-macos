@@ -18,11 +18,6 @@
   nix.optimise.automatic = true;
 
   ##### Setup System #####
-
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
-  environment.systemPackages = (import ../softwares/nixPackages.nix) pkgs;
-
   homebrew.enable = true;
   homebrew.brews = import ../softwares/brews.nix;
   homebrew.casks = builtins.map (s: {

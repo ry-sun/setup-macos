@@ -5,7 +5,7 @@
   home.activation.initRust = lib.hm.dag.entryAfter [ "installPackages" ] ''
     echo "Running init Rust step..." | tee -a ~/hm-activation.log
 
-    export PATH="/run/current-system/sw/bin:$PATH"
+    export PATH="$HOME/.nix-profile/bin:$PATH"
     rustup install stable | tee -a ~/hm-activation.log
     rustup default stable | tee -a ~/hm-activation.log
     rustup component add rustfmt | tee -a ~/hm-activation.log
