@@ -9,6 +9,7 @@ pkgs: with pkgs; [
   ## Github Related
   gitFull
   git-lfs # LFS support
+  gitflow
   hub
   git-extras
   gh
