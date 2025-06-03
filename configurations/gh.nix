@@ -11,7 +11,7 @@
     ];
     settings = {
       editor = "nvim";
-      git_protocol = "https";
+      git_protocol = "ssh";
     };
   };
 }
