@@ -79,7 +79,7 @@
     // Extension: Git
     "git.alwaysSignOff": true,
     "git.autofetch": true,
-    "git.blame.editorDecoration.enabled": true,
+    "git.blame.editorDecoration.enabled": false,
     "git.fetchOnPull": true,
     // Extension: Github Copilot Chat
     "github.copilot.chat.codesearch.enabled": true,
