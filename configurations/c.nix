@@ -13,9 +13,10 @@
     "${pkgs.darwin.libiconv}/lib"
   ];
   home.sessionVariables = {
-    CC = "gcc";
-    CXX = "g++";
+    CC = "clang";
+    CXX = "clang++";
     LDFLAGS = "-L${pkgs.darwin.libiconv}/lib";
-    CPPFLAGS = "-I${pkgs.darwin.libiconv}/include";
+    CFLAGS = "-isysroot $(xcrun --show-sdk-path) -I${pkgs.darwin.libiconv}/include";
+    CPPFLAGS = "-isysroot $(xcrun --show-sdk-path) -I${pkgs.darwin.libiconv}/include";
   };
 }

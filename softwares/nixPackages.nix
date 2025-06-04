@@ -98,12 +98,13 @@ pkgs: with pkgs; [
   ## Utils
   coreutils-full
   darwin.libiconv
+  libpkgconf
   ncurses
   reattach-to-user-namespace
 
   # Programming Lanuage Related
   ## C & Makefile
-  gcc
+  clang
   gnumake
   cmake
   automake
