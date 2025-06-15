@@ -3,7 +3,7 @@ rec {
   firstName = "Ruiyang";
   lastName = "Sun";
   fullName = "${firstName} ${lastName}";
-  hostname = "Ruiyangs-MacBook";
+  hostname = "RySun-Macbook-Air-M2";
   home = "/Users/${user}";
   email = "ruiyangsun02@gmail.com";
   arch = "aarch64";

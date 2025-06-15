@@ -66,7 +66,7 @@ echo "-----------------------------------------"
 echo "Installing nix-darwin and home-manager configurations..."
 
 # Run the configuration commands
-nix run nix-darwin/master#darwin-rebuild -- switch --flake "${SCRIPT_PATH}/nix-darwin#${hostname}" --impure
+nix run nix-darwin/nix-darwin-24.11#darwin-rebuild -- switch --flake "${SCRIPT_PATH}/nix-darwin#${hostname}" --impure
 
 sudo launchctl bootout system /Library/LaunchDaemons/org.nixos.activate-system.plist
 sudo launchctl bootstrap system /Library/LaunchDaemons/org.nixos.activate-system.plist
