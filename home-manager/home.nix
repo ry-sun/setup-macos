@@ -48,7 +48,6 @@
     ../configurations/ranger.nix
     ../configurations/rust.nix
     ../configurations/ssh.nix
-    ../configurations/tex.nix
     ../configurations/thefuck.nix
     ../configurations/vscode.nix
     ../configurations/zsh.nix
