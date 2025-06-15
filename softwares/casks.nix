@@ -18,5 +18,5 @@
   "papers"
   "zoom"
   "adobe-creative-cloud"
-  "maccy"
+  "discord"
 ]
