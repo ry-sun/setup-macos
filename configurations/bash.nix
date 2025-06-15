@@ -7,6 +7,9 @@ in
     enable = true;
     enableCompletion = true;
     bashrcExtra = ''
+      # Homebrew init
+      eval "$(${brewDir}/bin/brew shellenv)"
+
       # >>> mamba initialize >>>
       # !! Contents within this block are managed by 'mamba shell init' !!
       export MAMBA_EXE='${brewDir}/bin/mamba';
