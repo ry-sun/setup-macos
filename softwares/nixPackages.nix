@@ -97,8 +97,6 @@ pkgs: with pkgs; [
 
   ## Utils
   coreutils-full
-  darwin.libiconv
-  libpkgconf
   ncurses
   reattach-to-user-namespace
 
@@ -109,6 +107,10 @@ pkgs: with pkgs; [
   cmake
   automake
   autoconf
+
+  darwin.libiconv
+  libpkgconf
+  zlib
 
   ## Shell DevTools
   shellcheck
