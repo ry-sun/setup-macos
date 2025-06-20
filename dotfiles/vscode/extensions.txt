@@ -7,6 +7,7 @@ biomejs.biome
 bradlc.vscode-tailwindcss
 charliermarsh.ruff
 christian-kohler.path-intellisense
+cordx56.rustowl-vscode
 davidanson.vscode-markdownlint
 dejmedus.tailwind-sorter
 donjayamanne.githistory
