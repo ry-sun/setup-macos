@@ -14,6 +14,7 @@
   "iterm2"
   "iina"
   "chatgpt"
+  "claude"
   "aldente"
   "papers"
   "zoom"
