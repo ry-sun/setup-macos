@@ -8,6 +8,8 @@
     "cursor.diffs.useCharacterLevelDiffs": true,
     "cursor.terminal.usePreviewBox": true,
     "cursor.general.gitGraphIndexing": "enabled",
+    // Application
+    "application.shellEnvironmentResolutionTimeout": 60,
     // Text Editor
     "editor.codeActions.triggerOnFocusChange": true,
     "editor.codeActionsOnSave": {
@@ -111,11 +113,11 @@
     "latex-workshop.bibtex.maxFileSize": 10,
     "latex-workshop.formatting.latex": "latexindent",
     "latex-workshop.formatting.latexindent.args": [
-        "-l"                                 ,
+        "-l",
         "%WORKSPACE_FOLDER%/latexindent.yaml",
-        "-m"                                 ,
-        "-c"                                 ,
-        "%DIR%/"                             ,
+        "-m",
+        "-c",
+        "%DIR%/",
         "%TMPFILE%"
     ],
     "latex-workshop.formatting.tex-fmt.args": [],
@@ -124,10 +126,10 @@
     "latex-workshop.latex.autoClean.run": "onSucceeded",
     "latex-workshop.latex.clean.subfolder.enabled": true,
     "latex-workshop.latex.magic.args": [
-        "-synctex=1"              ,
+        "-synctex=1",
         "-interaction=nonstopmode",
-        "-file-line-error"        ,
-        "-recorder"               ,
+        "-file-line-error",
+        "-recorder",
         "%DOC%"
     ],
     "latex-workshop.latex.magic.bib.args": [
@@ -163,12 +165,12 @@
             "name": "pdflatexmk",
             "command": "latexmk",
             "args": [
-                "-pdflatex"               ,
-                "-synctex=1"              ,
+                "-pdflatex",
+                "-synctex=1",
                 "-interaction=nonstopmode",
-                "-file-line-error"        ,
-                "-recorder"               ,
-                "-outdir=%OUTDIR%"        ,
+                "-file-line-error",
+                "-recorder",
+                "-outdir=%OUTDIR%",
                 "%DOC%"
             ],
             "env": {
@@ -179,12 +181,12 @@
             "name": "lualatexmk",
             "command": "latexmk",
             "args": [
-                "-lualatex"               ,
-                "-synctex=1"              ,
+                "-lualatex",
+                "-synctex=1",
                 "-interaction=nonstopmode",
-                "-file-line-error"        ,
-                "-recorder"               ,
-                "-outdir=%OUTDIR%"        ,
+                "-file-line-error",
+                "-recorder",
+                "-outdir=%OUTDIR%",
                 "%DOC%"
             ],
             "env": {
@@ -210,7 +212,7 @@
     ],
     "latex-workshop.linting.chktex.enabled": true,
     "latex-workshop.linting.chktex.exec.args": [
-        "-l"                          ,
+        "-l",
         "%WORKSPACE_FOLDER%/.chktexrc"
     ],
     "latex-workshop.linting.lacheck.enabled": true,
@@ -232,14 +234,37 @@
     // Extension: Python Docstring Generator configuration
     "autoDocstring.docstringFormat": "pep257",
     // Extension: Rust analyzer
+    "rust-analyzer.server.path": "~/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rust-analyzer",
+    "rust-analyzer.restartServerOnConfigChange": true,
     "rust-analyzer.showSyntaxTree": true,
-    "rust-analyzer.diagnostics.experimental.enable": true,
+    "rust-analyzer.testExplorer": true,
+    "rust-analyzer.debug.buildBeforeRestart": true,
     "rust-analyzer.diagnostics.previewRustcOutput": true,
     "rust-analyzer.diagnostics.styleLints.enable": true,
+    "rust-analyzer.diagnostics.useRustcErrorCode": true,
     "rust-analyzer.assist.emitMustUse": true,
+    "rust-analyzer.assist.preferSelf": true,
     "rust-analyzer.completion.fullFunctionSignatures.enable": true,
     "rust-analyzer.completion.hideDeprecated": true,
+    "rust-analyzer.hover.actions.references.enable": true,
     "rust-analyzer.imports.preferNoStd": true,
+    "rust-analyzer.inlayHints.bindingModeHints.enable": true,
+    "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
+    "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "with_block",
+    "rust-analyzer.inlayHints.discriminantHints.enable": "fieldless",
+    "rust-analyzer.inlayHints.expressionAdjustmentHints.enable": "reborrow",
+    "rust-analyzer.inlayHints.expressionAdjustmentHints.hideOutsideUnsafe": true,
+    "rust-analyzer.inlayHints.genericParameterHints.lifetime.enable": true,
+    "rust-analyzer.inlayHints.genericParameterHints.type.enable": true,
+    "rust-analyzer.inlayHints.implicitDrops.enable": true,
+    "rust-analyzer.inlayHints.implicitSizedBoundHints.enable": true,
+    "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
+    "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
+    "rust-analyzer.inlayHints.rangeExclusiveHints.enable": true,
+    "rust-analyzer.inlayHints.reborrowHints.enable": "mutable",
+    "rust-analyzer.inlayHints.typeHints.hideClosureInitialization": false,
+    "rust-analyzer.interpret.tests": true,
+    "rust-analyzer.lens.references.adt.enable": true,
     "rust-analyzer.lens.references.enumVariant.enable": true,
     "rust-analyzer.lens.references.method.enable": true,
     "rust-analyzer.lens.references.trait.enable": true,
@@ -312,7 +337,7 @@
         "diffEditor.ignoreTrimWhitespace": false,
         "editor.defaultColorDecorators": "never",
         "editor.quickSuggestions": {
-            "other"   : true ,
+            "other"   : true,
             "comments": false,
             "strings" : true
         }
