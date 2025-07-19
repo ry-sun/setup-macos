@@ -10,6 +10,7 @@
     rustup default stable | tee -a ~/hm-activation.log
     rustup component add rustfmt | tee -a ~/hm-activation.log
     rustup component add clippy | tee -a ~/hm-activation.log
+    rustup component add rust-analyzer | tee -a ~/hm-activation.log
 
     echo "Done init Rust" | tee -a ~/hm-activation.log
   '';
