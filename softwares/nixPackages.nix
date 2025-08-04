@@ -103,15 +103,9 @@ pkgs: with pkgs; [
 
   # Programming Lanuage Related
   ## C & Makefile
-  clang
-  gnumake
   cmake
   automake
   autoconf
-
-  darwin.libiconv
-  libpkgconf
-  zlib
 
   ## Shell DevTools
   shellcheck
