@@ -59,7 +59,6 @@
     dock.orientation = "bottom"; # dock should be placed in bottom
     # Make this compitable to nix-darwin 24.11, we will change back after 25.11 stable.
     dock.persistent-apps = [
-      "/System/Applications/Launchpad.app"
       "/Applications/Safari.app"
       "/System/Applications/Messages.app"
       "/System/Applications/Mail.app"
@@ -75,6 +74,7 @@
       "/System/Applications/iPhone Mirroring.app"
       "/System/Applications/System Settings.app"
       "/Applications/Loon.app"
+      "/Applications/ChatGPT.app"
     ];
     dock.persistent-others = [
       "${args.home}/Downloads"
@@ -95,6 +95,5 @@
     # others
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true; # Automactically install system updates
     loginwindow.GuestEnabled = false;
-    screencapture.target = "clipboard";
   };
 }
