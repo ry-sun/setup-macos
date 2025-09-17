@@ -114,7 +114,7 @@
     "latex-workshop.formatting.latex": "latexindent",
     "latex-workshop.formatting.latexindent.args": [
         "-l",
-        "%WORKSPACE_FOLDER%/latexindent.yaml",
+        "%WORKSPACE_FOLDER%/.latexindent.yaml",
         "-m",
         "-c",
         "%DIR%/",
@@ -174,7 +174,7 @@
                 "%DOC%"
             ],
             "env": {
-                "TEXINPUTS": ".:%WORKSPACE_FOLDER%/style:%WORKSPACE_FOLDER%/assets:"
+                "TEXINPUTS": ".:%WORKSPACE_FOLDER%/styles:%WORKSPACE_FOLDER%/assets:"
             }
         },
         {
@@ -190,7 +190,7 @@
                 "%DOC%"
             ],
             "env": {
-                "TEXINPUTS": ".:%WORKSPACE_FOLDER%/style:%WORKSPACE_FOLDER%/assets:"
+                "TEXINPUTS": ".:%WORKSPACE_FOLDER%/styles:%WORKSPACE_FOLDER%/assets:"
             }
         },
         {
@@ -198,7 +198,7 @@
             "command": "biber",
             "args": ["%OUTDIR%/%DOCFILE%.bcf"],
             "env": {
-                "TEXINPUTS": ".:%WORKSPACE_FOLDER%/style:%WORKSPACE_FOLDER%/assets:"
+                "TEXINPUTS": ".:%WORKSPACE_FOLDER%/styles:%WORKSPACE_FOLDER%/assets:"
             }
         },
         {
@@ -206,7 +206,7 @@
             "command": "bibtex",
             "args": ["%OUTDIR%/%DOCFILE%.bcf"],
             "env": {
-                "TEXINPUTS": ".:%WORKSPACE_FOLDER%/style:%WORKSPACE_FOLDER%/assets:"
+                "TEXINPUTS": ".:%WORKSPACE_FOLDER%/styles:%WORKSPACE_FOLDER%/assets:"
             }
         }
     ],
