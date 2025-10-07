@@ -44,11 +44,11 @@
     ../configurations/lazygit.nix
     ../configurations/node.nix
     ../configurations/ohMyPosh.nix
+    ../configurations/pay-respects.nix
     ../configurations/python.nix
     ../configurations/ranger.nix
     ../configurations/rust.nix
     ../configurations/ssh.nix
-    ../configurations/thefuck.nix
     ../configurations/vscode.nix
     ../configurations/zsh.nix
   ];
