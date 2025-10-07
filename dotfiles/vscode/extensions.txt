@@ -59,6 +59,7 @@ ms-vsliveshare.vsliveshare
 mtxr.sqltools
 mtxr.sqltools-driver-pg
 mtxr.sqltools-driver-sqlite
+myriad-dreamin.tinymist
 njpwerner.autodocstring
 oven.bun-vscode
 p1c2u.docker-compose
@@ -81,6 +82,7 @@ tauri-apps.tauri-vscode
 timonwong.shellcheck
 tompollak.lazygit-vscode
 unifiedjs.vscode-mdx
+usernamehw.errorlens
 vadimcn.vscode-lldb
 visualstudioexptteam.intellicode-api-usage-examples
 visualstudioexptteam.vscodeintellicode

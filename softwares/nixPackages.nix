@@ -148,6 +148,10 @@ pkgs: with pkgs; [
   ## Tex
   texliveFull
 
+  ## Typst
+  typst
+  typstyle
+
   ## Lint & Format
   pre-commit
   addlicense

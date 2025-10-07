@@ -271,6 +271,14 @@
     "rust-analyzer.rustfmt.rangeFormatting.enable": true,
     // Extension: Tailwind Fold Settings
     "tailwind-fold.unfoldIfLineSelected": true,
+    // Extension: Tinymist Typst
+    "tinymist.completion.triggerOnSnippetPlaceholders": true,
+    "tinymist.formatterPrintWidth": 100,
+    "tinymist.formatterProseWrap": true,
+    "tinymist.lint.enabled": true,
+    "tinymist.outputPath": "$root/target/$dir/$name",
+    "tinymist.preview.cursorIndicator": true,
+    "tinymist.preview.scrollSync": "onSelectionChange",
     // Extension: TypeScript
     "javascript.referencesCodeLens.enabled": true,
     "javascript.referencesCodeLens.showOnAllFunctions": true,
@@ -284,6 +292,9 @@
         "editor.tabSize": 2,
         "editor.detectIndentation": false,
         "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
     },
     "[jsonc]": {
         "editor.tabSize": 2,
@@ -329,6 +340,7 @@
         "editor.defaultColorDecorators": "never"
     },
     "[toml]": {"editor.defaultFormatter": "tamasfe.even-better-toml"},
+    "[typst]": {"editor.tabSize": 2},
     "[yaml][yml]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
@@ -341,5 +353,16 @@
             "comments": false,
             "strings" : true
         }
+    },
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other"   : true,
+            "comments": false,
+            "strings" : true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
     }
 }
