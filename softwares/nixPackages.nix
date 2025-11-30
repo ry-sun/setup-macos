@@ -43,7 +43,7 @@ pkgs: with pkgs; [
   fzf
   eza
   clock-rs
-  thefuck
+  pay-respects
 
   ## Archive Tools
   atool

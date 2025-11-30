@@ -15,6 +15,7 @@
   "iina"
   "chatgpt"
   "claude"
+  "chatgpt-atlas"
   "aldente"
   "papers"
   "zoom"
