@@ -74,7 +74,7 @@
       "/System/Applications/iPhone Mirroring.app"
       "/System/Applications/System Settings.app"
       "/Applications/Loon.app"
-      "/Applications/ChatGPT.app"
+      "/Applications/ChatGPT Atlas.app"
     ];
     dock.persistent-others = [
       "${args.home}/Downloads"

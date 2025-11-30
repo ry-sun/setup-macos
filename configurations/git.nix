@@ -3,11 +3,12 @@
   programs.git = {
     enable = true;
     package = pkgs.gitFull;
-    diff-so-fancy.enable = true;
     lfs.enable = true;
-    userName = args.fullName;
-    userEmail = args.email;
-    extraConfig = {
+    settings = {
+      user = {
+        name = args.fullName;
+        email = args.email;
+      };
       core = {
         compression = "-1";
         eol = "lf";

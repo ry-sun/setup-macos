@@ -35,6 +35,7 @@
     ../configurations/btop.nix
     ../configurations/c.nix
     ../configurations/clcokRs.nix
+    ../configurations/diff-so-fancy.nix
     ../configurations/editorconfig.nix
     ../configurations/eza.nix
     ../configurations/fzf.nix
