@@ -15,7 +15,7 @@ This repository provides an **automated setup** for MacOS using [Nix](https://ni
 **Quick Start:**
 
 ```bash
-curl -sL https://raw.githubusercontent.com/rockmagma02/setup-macos/main/entry.sh | bash
+curl -sL https://raw.githubusercontent.com/ry-sun/setup-macos/main/entry.sh | bash
 ```
 
 ## Usage
@@ -27,13 +27,13 @@ curl -sL https://raw.githubusercontent.com/rockmagma02/setup-macos/main/entry.sh
 The simplest way to install is using the entry script:
 
 ```bash
-curl -sL https://raw.githubusercontent.com/rockmagma02/setup-macos/main/entry.sh | bash
+curl -sL https://raw.githubusercontent.com/ry-sun/setup-macos/main/entry.sh | bash
 ```
 
 Or with wget:
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/rockmagma02/setup-macos/main/entry.sh | bash
+wget -qO- https://raw.githubusercontent.com/ry-sun/setup-macos/main/entry.sh | bash
 ```
 
 This will:
@@ -59,7 +59,7 @@ If you prefer to install manually:
 2. Clone the repository:
 
    ```bash
-   git clone https://github.com/rockmagma02/setup-macos.git ~/.config/setup-macos
+   git clone https://github.com/ry-sun/setup-macos.git ~/.config/setup-macos
    ```
 
 3. Navigate to the repository:
@@ -208,7 +208,7 @@ Run `./switch.sh` to apply your changes. The script will update both nix-darwin 
 
 ## Contributing
 
-Contributions are welcome! Please feel free to ask question in [issues](https://github.com/rockmagma02/setup-macos/issues) or submit a [Pull Request](https://github.com/rockmagma02/setup-macos/pulls).
+Contributions are welcome! Please feel free to ask question in [issues](https://github.com/ry-sun/setup-macos/issues) or submit a [Pull Request](https://github.com/ry-sun/setup-macos/pulls).
 
 ## License
 

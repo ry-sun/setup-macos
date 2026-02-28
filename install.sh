@@ -2,14 +2,8 @@
 
 SCRIPT_PATH="$(dirname "${BASH_SOURCE[0]}")"
 
-# Get current user name and architecture
+# Get current user name
 current_user=$(whoami)
-architecture=$(uname -m)
-if [[ "$architecture" == "arm64" ]]; then
-    arch="aarch64"
-else
-    arch="x86_64"
-fi
 
 # Try to get name from iCloud as fallback
 icloud_first_name=""
@@ -40,17 +34,27 @@ while [[ -z "$email" || ! "$email" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z
     read -rp "Enter your email: " email </dev/tty
 done
 
-# Update arguments.nix
-cat >arguments.nix <<EOF
+# Update args.nix
+cat >nix-darwin/args.nix <<EOF
 rec {
   user = "${current_user}";
-  firstName = "${first_name}";
-  lastName = "${last_name}";
-  fullName = "\${firstName} \${lastName}";
-  hostname = "${hostname}";
+  firstname = "${first_name}";
+  lastname = "${last_name}";
+  fullname = "\${firstname} \${lastname}";
   home = "/Users/\${user}";
+  hostname = "${hostname}";
   email = "${email}";
-  arch = "${arch}";
+}
+EOF
+cat >home-manager/args.nix <<EOF
+rec {
+  user = "${current_user}";
+  firstname = "${first_name}";
+  lastname = "${last_name}";
+  fullname = "\${firstname} \${lastname}";
+  home = "/Users/\${user}";
+  hostname = "${hostname}";
+  email = "${email}";
 }
 EOF
 
@@ -63,10 +67,21 @@ echo "Email: $email"
 echo "Architecture: $arch"
 echo "-----------------------------------------"
 
-echo "Installing nix-darwin and home-manager configurations..."
+echo "Install Command Line Tools..."
+xcode-select --install
+sudo xcodebuild -license accept
 
-# Run the configuration commands
-nix run nix-darwin/nix-darwin-24.11#darwin-rebuild -- switch --flake "${SCRIPT_PATH}/nix-darwin#${hostname}" --impure
+echo "Install Homebrew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+echo "Link nix-darwin and home-manager..."
+sudo rm -f /etc/nix-darwin
+sudo ln -s ${SCRIPT_PATH}/nix-darwin /etc/nix-darwin
+rm -f ~/.config/home-manager
+ln -s ${SCRIPT_PATH}/home-manager ~/.config/home-manager
+
+echo "Installing nix-darwin and home-manager configurations..."
+sudo nix run nix-darwin/master#darwin-rebuild -- switch
 
 sudo launchctl bootout system /Library/LaunchDaemons/org.nixos.activate-system.plist
 sudo launchctl bootstrap system /Library/LaunchDaemons/org.nixos.activate-system.plist
@@ -74,6 +89,6 @@ sudo launchctl bootstrap system /Library/LaunchDaemons/org.nixos.activate-system
 # Disable this line if you didn't install Xcode
 sudo xcodebuild -license accept
 
-nix run home-manager/master#home-manager -- switch --flake "${SCRIPT_PATH}/home-manager" --impure
+nix run home-manager/master -- switch --impure
 
 echo "Installation complete! Your MacOS has been configured successfully."
