@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_PATH="$(dirname "${BASH_SOURCE[0]}")"
+SCRIPT_PATH="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 
 # Get current user name
 current_user=$(whoami)
@@ -81,7 +81,7 @@ rm -f ~/.config/home-manager
 ln -s ${SCRIPT_PATH}/home-manager ~/.config/home-manager
 
 echo "Installing nix-darwin and home-manager configurations..."
-sudo nix run nix-darwin/master#darwin-rebuild -- switch
+sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake "/etc/nix-darwin#${hostname}"
 
 sudo launchctl bootout system /Library/LaunchDaemons/org.nixos.activate-system.plist
 sudo launchctl bootstrap system /Library/LaunchDaemons/org.nixos.activate-system.plist

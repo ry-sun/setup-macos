@@ -1,6 +1,6 @@
 #! /bin/bash
 
-SCRIPT_PATH="$(dirname "${BASH_SOURCE[0]}")"
+SCRIPT_PATH="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 
 echo "Link nix-darwin and home-manager..."
 sudo rm -f /etc/nix-darwin

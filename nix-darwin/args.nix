@@ -4,6 +4,6 @@ rec {
   lastname = "Sun";
   fullname = "${firstname} ${lastname}";
   home = "/Users/${user}";
-  hostname = "RySun-MacBook-Air-M2";
+  hostname = "Ryan-MacBook-Air-M2";
   email = "ruiyangsun02@gmail.com";
 }

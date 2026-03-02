@@ -38,6 +38,7 @@ in
       "git-extras"
       "git-lfs"
       "gitignore"
+      "uv"
       "python"
       "pip"
       "pylint"
@@ -46,9 +47,12 @@ in
       "swiftpm"
       "npm"
       "nvm"
+      "yarn"
+      "rust"
       "tmux"
       "brew"
       "vscode"
+      "xcode"
     ];
     plugins = [
       {
