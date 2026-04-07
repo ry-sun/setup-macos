@@ -8,6 +8,12 @@ sudo ln -s ${SCRIPT_PATH}/nix-darwin /etc/nix-darwin
 rm -f ~/.config/home-manager
 ln -s ${SCRIPT_PATH}/home-manager ~/.config/home-manager
 
+echo "Update nix-darwin and home-manager"
+cd "${SCRIPT_PATH}/nix-darwin"
+nix flake update
+cd "${SCRIPT_PATH}/home-manager"
+nix flake update
+
 echo "Switch to new configurations..."
 sudo darwin-rebuild switch
 
