@@ -8,6 +8,4 @@
 
   # Lint & Format
   "cspell"
-
-  "rust"
 ]
