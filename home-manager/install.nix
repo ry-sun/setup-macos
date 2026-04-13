@@ -155,4 +155,7 @@ pkgs: with pkgs; [
   pre-commit
   addlicense
   enchant
+
+  ##AI agents
+  codex
 ]

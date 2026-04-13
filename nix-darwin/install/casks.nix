@@ -21,4 +21,8 @@
   "zoom"
   "adobe-creative-cloud"
   "discord"
+
+  # Code Agents
+  "codex"
+  "codex-app"
 ]
