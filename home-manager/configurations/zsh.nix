@@ -10,94 +10,68 @@ in
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    enableVteIntegration = true;
+
     autocd = true;
     autosuggestion.enable = true;
-    oh-my-zsh.enable = true;
-    oh-my-zsh.custom = "$HOME/.zsh";
-    oh-my-zsh.plugins = [
-      "macos"
-      "zsh-completions"
-      "zsh-autosuggestions"
-      "zsh-syntax-highlighting"
-      "you-should-use"
-      "zsh-bat"
-      "conda-zsh-completion"
-      "web-search"
-      "colorize"
-      "colored-man-pages"
-      "fzf"
-      "copyfile"
-      "copypath"
-      "copybuffer"
-      "dirhistory"
-      "cp"
-      "rsync"
-      "git"
-      "git-auto-fetch"
-      "git-commit"
-      "git-extras"
-      "git-lfs"
-      "gitignore"
-      "uv"
-      "python"
-      "pip"
-      "pylint"
-      "docker"
-      "docker-compose"
-      "swiftpm"
-      "npm"
-      "nvm"
-      "yarn"
-      "rust"
-      "tmux"
-      "brew"
-      "vscode"
-      "xcode"
-    ];
-    plugins = [
-      {
-        name = "zsh-completions";
-        src = builtins.fetchGit {
-          url = "https://github.com/zsh-users/zsh-completions.git";
-          ref = "master";
-        };
-      }
-      {
-        name = "zsh-autosuggestions";
-        src = builtins.fetchGit {
-          url = "https://github.com/zsh-users/zsh-autosuggestions.git";
-          ref = "master";
-        };
-      }
-      {
-        name = "zsh-syntax-highlighting";
-        src = builtins.fetchGit {
-          url = "https://github.com/zsh-users/zsh-syntax-highlighting.git";
-          ref = "master";
-        };
-      }
-      {
-        name = "you-should-use";
-        src = builtins.fetchGit {
-          url = "https://github.com/MichaelAquilina/zsh-you-should-use.git";
-          ref = "master";
-        };
-      }
-      {
-        name = "zsh-bat";
-        src = builtins.fetchGit {
-          url = "https://github.com/fdellwing/zsh-bat.git";
-          ref = "master";
-        };
-      }
-      {
-        name = "conda-zsh-completion";
-        src = builtins.fetchGit {
-          url = "https://github.com/conda-incubator/conda-zsh-completion.git";
-          ref = "main";
-        };
-      }
-    ];
+    syntaxHighlighting.enable = true;
+
+    antidote = {
+      enable = true;
+      plugins = [
+        "zsh-users/zsh-completions"
+        "zsh-users/zsh-autosuggestions"
+        "zsh-users/zsh-syntax-highlighting"
+        "MichaelAquilina/zsh-you-should-use"
+        "fdellwing/zsh-bat"
+        "conda-incubator/conda-zsh-completion"
+      ];
+    };
+    oh-my-zsh = {
+      enable = true;
+      custom = "$HOME/.ohmyzsh";
+      plugins = [
+        "brew"
+        "bun"
+        "colored-man-pages"
+        "command-not-found"
+        "conda"
+        "copybuffer"
+        "copyfile"
+        "copyfile"
+        "dirhistory"
+        "docker-compose"
+        "docker"
+        "dotenv"
+        "extract"
+        "fzf"
+        "gh"
+        "git-auto-fetch"
+        "git-commit"
+        "git-extras"
+        "git-flow"
+        "git-lfs"
+        "git"
+        "gitignore"
+        "history"
+        "iterm2"
+        "macos"
+        "npm"
+        "nvm"
+        "pip"
+        "pre-commit"
+        "python"
+        "rsync"
+        "rust"
+        "ssh"
+        "swiftpm"
+        "tmux"
+        "uv"
+        "vscode"
+        "xcode"
+        "yarn"
+      ];
+    };
     envExtra = ''
       # Homebrew init
       eval "$(${brewDir}/bin/brew shellenv)"
