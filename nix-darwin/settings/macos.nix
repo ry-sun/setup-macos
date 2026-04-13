@@ -66,14 +66,14 @@
       "/System/Applications/Music.app"
       "/Applications/Visual Studio Code.app"
       "/Applications/Cursor.app"
-      "/Applications/iTerm.app"
+      "/Applications/Ghostty.app"
       "/System/Applications/iPhone Mirroring.app"
       "/System/Applications/System Settings.app"
       "/Applications/Loon.app"
       "/Applications/ChatGPT Atlas.app"
     ];
     dock.persistent-others = [
-      "${args.home}/Downloads"
+      "/Users/rysun/Library/Mobile Documents/com~apple~CloudDocs/Downloads"
       "${args.home}/Documents"
     ];
     dock.show-recents = true;

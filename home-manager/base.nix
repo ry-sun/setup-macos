@@ -35,6 +35,7 @@
     ./configurations/eza.nix
     ./configurations/fzf.nix
     ./configurations/gh.nix
+    ./configurations/ghostty.nix
     ./configurations/git.nix
     ./configurations/iterm2.nix
     ./configurations/lazygit.nix

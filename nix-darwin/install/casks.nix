@@ -12,6 +12,7 @@
   # softwares
   "bobhelper"
   "iterm2"
+  "ghostty"
   "iina"
   "chatgpt"
   "claude"
