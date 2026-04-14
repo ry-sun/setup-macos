@@ -14,6 +14,9 @@
       font-thicken-strength = 128;
       font-shaping-break = "cursor";
 
+      # Key binding
+      keybind = [ "global:super+grave_accent=toggle_quick_terminal" ];
+
       # Theme
       theme = "light:Xcode WWDC,dark:Xcode Dark hc";
       background-opacity = 0.7;
@@ -70,6 +73,13 @@
 
       quit-after-last-window-closed = false;
       initial-window = true;
+
+      # Qucik Terminal
+      quick-terminal-position = "top";
+      quick-terminal-size = "50%,500px";
+      quick-terminal-screen = "mouse";
+      quick-terminal-autohide = false;
+      quick-terminal-space-behavior = "move";
 
       # Shell
       shell-integration = "detect";
