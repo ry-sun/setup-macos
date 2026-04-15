@@ -1,7 +1,7 @@
 [
   # Text/Code Editor
-  "cursor"
   "visual-studio-code"
+  "zed"
 
   # Python
   "miniforge"

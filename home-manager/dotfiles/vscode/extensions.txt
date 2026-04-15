@@ -84,8 +84,6 @@ tompollak.lazygit-vscode
 unifiedjs.vscode-mdx
 usernamehw.errorlens
 vadimcn.vscode-lldb
-visualstudioexptteam.intellicode-api-usage-examples
-visualstudioexptteam.vscodeintellicode
 vknabel.vscode-swiftformat
 vknabel.vscode-swiftlint
 wakatime.vscode-wakatime

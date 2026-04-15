@@ -21,20 +21,20 @@
       };
       diff = {
         tool = "nvimdiff";
-        guitool = "cursor";
+        guitool = "code";
       };
       difftool = {
         prompt = false;
         nvimdiff = {
           cmd = "nvim -d \"$LOCAL\" \"$REMOTE\"";
         };
-        cursor = {
-          cmd = "cursor --wait --diff \"$LOCAL\" \"$REMOTE\"";
+        code = {
+          cmd = "code --wait --diff \"$LOCAL\" \"$REMOTE\"";
         };
       };
       merge = {
         tool = "nvimdiff";
-        guitool = "cursor";
+        guitool = "code";
       };
       mergetool = {
         prompt = false;
@@ -42,7 +42,7 @@
           cmd = "nvim -d \"$LOCAL\" \"$REMOTE\" \"$MERGED\"";
         };
         cursor = {
-          cmd = "cursor --wait --merge \"$LOCAL\" \"$REMOTE\" \"$MERGED\"";
+          cmd = "code --wait --merge \"$LOCAL\" \"$REMOTE\" \"$MERGED\"";
         };
       };
       pull = {

@@ -31,7 +31,7 @@
     "editor.rulers": [80, 100, 120, 140],
     "editor.wordBreak": "keepAll",
     "editor.wordWrapColumn": 90,
-    // Text Editor: Cursorg
+    // Text Editor: Cursor
     "editor.cursorBlinking": "smooth",
     // Text Editor: Find
     "editor.find.autoFindInSelection": "multiline",
@@ -48,7 +48,7 @@
     "diffEditor.experimental.useTrueInlineView": true,
     "diffEditor.ignoreTrimWhitespace": false,
     // Text Editor: Minimap
-    "editor.minimap.autohide": true,
+    "editor.minimap.autohide": "mouseover",
     "editor.minimap.maxColumn": 100,
     // Text Editor: Files
     "files.autoGuessEncoding": true,
