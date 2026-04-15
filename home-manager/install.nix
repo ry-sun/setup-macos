@@ -146,6 +146,7 @@ pkgs: with pkgs; [
 
   ## Tex
   texliveFull
+  tex-fmt
 
   ## Typst
   typst
