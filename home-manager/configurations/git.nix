@@ -21,15 +21,15 @@
       };
       diff = {
         tool = "nvimdiff";
-        guitool = "code";
+        guitool = "zed";
       };
       difftool = {
         prompt = false;
         nvimdiff = {
           cmd = "nvim -d \"$LOCAL\" \"$REMOTE\"";
         };
-        code = {
-          cmd = "code --wait --diff \"$LOCAL\" \"$REMOTE\"";
+        zed = {
+          cmd = "zed --wait --diff \"$LOCAL\" \"$REMOTE\"";
         };
       };
       merge = {
@@ -41,7 +41,8 @@
         nvimdiff = {
           cmd = "nvim -d \"$LOCAL\" \"$REMOTE\" \"$MERGED\"";
         };
-        cursor = {
+        # Zed currenly doesn't support 3-way merge, so we use VsCode as fallback
+        code = {
           cmd = "code --wait --merge \"$LOCAL\" \"$REMOTE\" \"$MERGED\"";
         };
       };

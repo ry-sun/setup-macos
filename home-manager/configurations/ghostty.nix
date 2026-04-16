@@ -84,6 +84,7 @@
       # Shell
       shell-integration = "detect";
       shell-integration-features = "cursor,sudo,title,ssh-env,ssh-terminfo,path";
+      # term = "xterm-kitty";
 
       # Macos
       macos-window-buttons = "visible";

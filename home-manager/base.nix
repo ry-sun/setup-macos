@@ -47,12 +47,13 @@
     ./configurations/rust.nix
     ./configurations/ssh.nix
     ./configurations/vscode.nix
+    ./configurations/zed.nix
     ./configurations/zsh.nix
   ];
 
   home.sessionVariables = {
     # Color settings
-    TERM = "xterm-256color";
+    # TERM = "xterm-256color";
     LESS = "-R -M -i -j5";
     CLICOLOR = "1";
     LSCOLORS = "GxFxCxDxBxegedabagaced";

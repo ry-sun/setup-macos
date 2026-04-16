@@ -4,7 +4,7 @@ let
 in
 {
   # Settings file
-  home.activation.vscodeMutableFiles = lib.hm.dag.entryAfter [ " writeBoundary" ] ''
+  home.activation.vscodeMutableFiles = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     mkdir -p "${vscodeUserDir}"
 
     rm -f "${vscodeUserDir}/settings.json"
