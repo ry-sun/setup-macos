@@ -9,6 +9,9 @@
   # Font
   "fontconfig"
 
+  # Utilities
+  "remindctl"
+
   # Lint & Format
   "cspell"
 ]
