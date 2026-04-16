@@ -16,7 +16,7 @@
       web_search = "cached";
 
       # TUI Settings
-      file_opener = "code";
+      file_opener = "none";
       hide_agent_reasoning = false;
       history.persistence = "save-all";
       tui = {
