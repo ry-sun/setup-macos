@@ -24,7 +24,9 @@ pkgs: with pkgs; [
   ## Text Editor, File Explorer, & Seesion Controlor
   neovim
   tmux
-  ranger
+  (ranger.override {
+    imagePreviewSupport = true;
+  })
 
   ## Downloader
   curl
@@ -113,10 +115,10 @@ pkgs: with pkgs; [
 
   ## Python
   uv
-  python313
-  python313Packages.ipython
-  python313Packages.nbconvert
-  python313Packages.pygments
+  python314
+  python314Packages.ipython
+  python314Packages.nbconvert
+  python314Packages.pygments
 
   ## Swift
   swiftlint
