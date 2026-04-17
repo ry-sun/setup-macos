@@ -53,7 +53,6 @@
     dock.magnification = true; # magnify icon when hover
     dock.mineffect = "genie"; # use genie for minimize/maximize window effect
     dock.orientation = "bottom"; # dock should be placed in bottom
-    # Make this compitable to nix-darwin 24.11, we will change back after 25.11 stable.
     dock.persistent-apps = [
       "/Applications/Safari.app"
       "/System/Applications/Messages.app"
@@ -65,7 +64,7 @@
       "/System/Applications/Freeform.app"
       "/System/Applications/Music.app"
       "/Applications/Visual Studio Code.app"
-      "/Applications/Cursor.app"
+      "/Applications/Zed.app/"
       "/Applications/Ghostty.app"
       "/System/Applications/iPhone Mirroring.app"
       "/System/Applications/System Settings.app"

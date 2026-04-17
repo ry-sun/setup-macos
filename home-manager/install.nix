@@ -24,6 +24,7 @@ pkgs: with pkgs; [
   ## Text Editor, File Explorer, & Seesion Controlor
   neovim
   tmux
+  yazi
   (ranger.override {
     imagePreviewSupport = true;
   })
@@ -44,6 +45,7 @@ pkgs: with pkgs; [
   tree
   fzf
   eza
+  zoxide
   clock-rs
   pay-respects
 

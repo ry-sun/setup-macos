@@ -47,7 +47,10 @@
     ./configurations/rust.nix
     ./configurations/ssh.nix
     ./configurations/vscode.nix
+    ./configurations/xcode.nix
+    ./configurations/yazi.nix
     ./configurations/zed.nix
+    ./configurations/zoxide.nix
     ./configurations/zsh.nix
   ];
 
