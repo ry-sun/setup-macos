@@ -13,7 +13,4 @@
       }
     ];
   };
-
-  home.file.".config/ranger/commands.py".source = ../dotfiles/ranger/commands.py;
-  home.file.".config/ranger/scope.sh".source = ../dotfiles/ranger/scope.sh;
 }
