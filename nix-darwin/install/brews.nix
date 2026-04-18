@@ -9,6 +9,9 @@
   # Font
   "fontconfig"
 
+  # 3d Viewer
+  "f3d"
+
   # Utilities
   "remindctl"
 

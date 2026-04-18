@@ -45,6 +45,7 @@ pkgs: with pkgs; [
   tree
   fzf
   eza
+  trash-cli
   zoxide
   clock-rs
   pay-respects
@@ -87,6 +88,9 @@ pkgs: with pkgs; [
 
   ## Font Tools
   fontforge
+
+  ## Other Previewers
+  rich-cli
 
   ## SSH
   openssh
@@ -144,6 +148,7 @@ pkgs: with pkgs; [
   ## SQL
   sqlite
   sqlite-utils
+  duckdb
 
   ## Ruby
   ruby

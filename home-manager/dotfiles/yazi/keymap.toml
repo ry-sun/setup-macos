@@ -1,4 +1,3 @@
-
 # A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
@@ -43,8 +42,8 @@ keymap = [
     { on = "<Left>", run = "leave", desc = "Back to the parent directory" },
     { on = "<Right>", run = "enter", desc = "Enter the child directory" },
 
-    { on = "H", run = "back", desc = "Back to previous directory" },
-    { on = "L", run = "forward", desc = "Forward to next directory" },
+    # Mac Preview
+    { on = "i", run = "plugin toggle-pane max-preview", desc = "Show or hide the preview pane" },
 
     # Toggle
     { on = "<Space>", run = [
@@ -62,6 +61,9 @@ keymap = [
     { on = "K", run = "seek -5", desc = "Seek up 5 units in the preview" },
     { on = "J", run = "seek 5", desc = "Seek down 5 units in the preview" },
 
+    { on = "H", run = "plugin duckdb -1", desc = "Scroll one column to the left" },
+    { on = "L", run = "plugin duckdb +1", desc = "Scroll one column to the right" },
+
     # Spotting
     { on = "<Tab>", run = "spot", desc = "Spot hovered file" },
 
@@ -70,15 +72,10 @@ keymap = [
     { on = "O", run = "open --interactive", desc = "Open selected files interactively" },
     { on = "<Enter>", run = "open", desc = "Open selected files" },
     { on = "<S-Enter>", run = "open --interactive", desc = "Open selected files interactively" },
-    { on = "p", run = "paste", desc = "Paste yanked files" },
-    { on = "P", run = "paste --force", desc = "Paste yanked files (overwrite if the destination exists)" },
     { on = "-", run = "link", desc = "Symlink the absolute path of yanked files" },
     { on = "_", run = "link --relative", desc = "Symlink the relative path of yanked files" },
-    { on = "<C-->", run = "hardlink", desc = "Hardlink yanked files" },
     { on = "Y", run = "unyank", desc = "Cancel the yank status" },
     { on = "X", run = "unyank", desc = "Cancel the yank status" },
-    { on = "d", run = "remove", desc = "Trash selected files" },
-    { on = "D", run = "remove --permanently", desc = "Permanently delete selected files" },
     { on = "a", run = "create", desc = "Create a file (ends with / for directories)" },
     { on = "r", run = "rename --cursor=before_ext", desc = "Rename selected file(s)" },
     { on = ";", run = "shell --interactive", desc = "Run a shell command" },
@@ -89,6 +86,72 @@ keymap = [
     { on = "<C-s>", run = "escape --search", desc = "Cancel the ongoing search" },
     { on = "z", run = "plugin fzf", desc = "Jump to a file/directory via fzf" },
     { on = "Z", run = "plugin zoxide", desc = "Jump to a directory via zoxide" },
+
+    # Copy
+    { on = [
+        "y",
+        "y",
+    ], run = "yank", desc = "Yank selected files (copy)" },
+    { on = [
+        "y",
+        "d",
+    ], run = "yank --cut", desc = "Yank selected files (cut)" },
+    { on = [
+        "y",
+        "p",
+    ], run = "copy path", desc = "Copy file URL" },
+    { on = [
+        "y",
+        "d",
+    ], run = "copy dirname", desc = "Copy directory URL" },
+    { on = [
+        "y",
+        "f",
+    ], run = "copy filename", desc = "Copy filename" },
+    { on = [
+        "y",
+        "n",
+    ], run = "copy name_without_ext", desc = "Copy filename without extension" },
+    { on = [
+        "y",
+        "c",
+    ], run = "plugin copy-file-contents", desc = "Copy contents of file" },
+
+    # Cut
+    { on = [
+        "d",
+        "d",
+    ], run = "remove", desc = "Trash selected files" },
+    { on = [
+        "d",
+        "D",
+    ], run = "remove --permanently", desc = "Permanently delete selected files" },
+    { on = [
+        "d",
+        "f",
+    ], run = "plugin recycle-bin", desc = "Open Recycle Bin menu" },
+    { on = [
+        "d",
+        "u",
+    ], run = "plugin restore", desc = "Restore last deleted files/folders" },
+    { on = [
+        "d",
+        "U",
+    ], run = "plugin restore -- --interactive", desc = "Restore deleted files/folders (Interactive)" },
+
+    # Paste
+    { on = [
+        "p",
+        "p",
+    ], run = "paste", desc = "Paste yanked files" },
+    { on = [
+        "p",
+        "P",
+    ], run = "paste --force", desc = "Paste yanked files (overwrite if the destination exists)" },
+    { on = [
+        "p",
+        "c",
+    ], run = "plugin save-clipboard-to-file", desc = "Paste clipboard content to file and hover after created" },
 
     # Linemode
     { on = [
@@ -116,31 +179,64 @@ keymap = [
         "n",
     ], run = "linemode none", desc = "Linemode: none" },
 
-    # Copy
+    ## ffmpeg linemodes - toggle individual stats
     { on = [
-        "y",
-        "y",
-    ], run = "yank", desc = "Yank selected files (copy)" },
-    { on = [
-        "y",
-        "d",
-    ], run = "yank --cut", desc = "Yank selected files (cut)" },
-    { on = [
-        "y",
-        "p",
-    ], run = "copy path", desc = "Copy file URL" },
-    { on = [
-        "y",
-        "d",
-    ], run = "copy dirname", desc = "Copy directory URL" },
-    { on = [
-        "y",
+        "m",
         "f",
-    ], run = "copy filename", desc = "Copy filename" },
+        "d",
+    ], run = "plugin ffmpeg-stats -- toggle-duration", desc = "Toggle duration" },
     { on = [
+        "m",
+        "f",
+        "r",
+    ], run = "plugin ffmpeg-stats -- toggle-resolution", desc = "Toggle resolution" },
+    { on = [
+        "m",
+        "f",
         "c",
-        "n",
-    ], run = "copy name_without_ext", desc = "Copy filename without extension" },
+    ], run = "plugin ffmpeg-stats -- toggle-codec", desc = "Toggle codec" },
+    { on = [
+        "m",
+        "f",
+        "f",
+    ], run = "plugin ffmpeg-stats -- toggle-fps", desc = "Toggle FPS" },
+    { on = [
+        "m",
+        "f",
+        "b",
+    ], run = "plugin ffmpeg-stats -- toggle-bitrate", desc = "Toggle bitrate" },
+    { on = [
+        "m",
+        "f",
+        "a",
+    ], run = "plugin ffmpeg-stats -- toggle-audio-codec", desc = "Toggle audio codec" },
+    { on = [
+        "m",
+        "f",
+        "h",
+    ], run = "plugin ffmpeg-stats -- toggle-audio-channels", desc = "Toggle audio channels" },
+    { on = [
+        "m",
+        "f",
+        "o",
+    ], run = "plugin ffmpeg-stats -- toggle-format", desc = "Toggle format" },
+    { on = [
+        "m",
+        "f",
+        "s",
+    ], run = "plugin ffmpeg-stats -- toggle-aspect", desc = "Toggle aspect ratio" },
+
+    # Bulk toggle operations
+    { on = [
+        "m",
+        "f",
+        "A",
+    ], run = "plugin ffmpeg-stats -- toggle-all", desc = "Toggle all stats" },
+    { on = [
+        "m",
+        "f",
+        "D",
+    ], run = "plugin ffmpeg-stats -- disable-all", desc = "Disable all stats" },
 
     # Filter
     { on = "f", run = "filter --smart", desc = "Filter files" },
@@ -223,6 +319,99 @@ keymap = [
         "r",
     ], run = "sort random --reverse=no", desc = "Sort randomly" },
 
+    ## ffmpeg sorting - sort by media stats
+    { on = [
+        ",",
+        "f",
+        "d",
+    ], run = "plugin ffmpeg-stats -- sort-duration", desc = "Sort by duration" },
+    { on = [
+        ",",
+        "f",
+        "D",
+    ], run = "plugin ffmpeg-stats -- sort-duration-reverse", desc = "Sort by duration (reverse)" },
+    { on = [
+        ",",
+        "f",
+        "r",
+    ], run = "plugin ffmpeg-stats -- sort-resolution", desc = "Sort by resolution" },
+    { on = [
+        ",",
+        "f",
+        "R",
+    ], run = "plugin ffmpeg-stats -- sort-resolution-reverse", desc = "Sort by resolution (reverse)" },
+    { on = [
+        ",",
+        "f",
+        "c",
+    ], run = "plugin ffmpeg-stats -- sort-codec", desc = "Sort by codec" },
+    { on = [
+        ",",
+        "f",
+        "C",
+    ], run = "plugin ffmpeg-stats -- sort-codec-reverse", desc = "Sort by codec (reverse)" },
+    { on = [
+        ",",
+        "f",
+        "f",
+    ], run = "plugin ffmpeg-stats -- sort-fps", desc = "Sort by FPS" },
+    { on = [
+        ",",
+        "f",
+        "F",
+    ], run = "plugin ffmpeg-stats -- sort-fps-reverse", desc = "Sort by FPS (reverse)" },
+    { on = [
+        ",",
+        "f",
+        "b",
+    ], run = "plugin ffmpeg-stats -- sort-bitrate", desc = "Sort by bitrate" },
+    { on = [
+        ",",
+        "f",
+        "B",
+    ], run = "plugin ffmpeg-stats -- sort-bitrate-reverse", desc = "Sort by bitrate (reverse)" },
+    { on = [
+        ",",
+        "f",
+        "a",
+    ], run = "plugin ffmpeg-stats -- sort-audio-codec", desc = "Sort by audio codec" },
+    { on = [
+        ",",
+        "f",
+        "A",
+    ], run = "plugin ffmpeg-stats -- sort-audio-codec-reverse", desc = "Sort by audio codec (reverse)" },
+    { on = [
+        ",",
+        "f",
+        "h",
+    ], run = "plugin ffmpeg-stats -- sort-audio-channels", desc = "Sort by audio channels" },
+    { on = [
+        ",",
+        "f",
+        "H",
+    ], run = "plugin ffmpeg-stats -- sort-audio-channels-reverse", desc = "Sort by audio channels (reverse)" },
+    { on = [
+        ",",
+        "f",
+        "o",
+    ], run = "plugin ffmpeg-stats -- sort-format", desc = "Sort by format" },
+    { on = [
+        ",",
+        "f",
+        "O",
+    ], run = "plugin ffmpeg-stats -- sort-format-reverse", desc = "Sort by format (reverse)" },
+    { on = [
+        ",",
+        "f",
+        "s",
+    ], run = "plugin ffmpeg-stats -- sort-aspect", desc = "Sort by aspect ratio" },
+    { on = [
+        ",",
+        "f",
+        "S",
+    ], run = "plugin ffmpeg-stats -- sort-aspect-reverse", desc = "Sort by aspect ratio (reverse)" },
+
+
     # Goto
     { on = [
         "g",
@@ -244,6 +433,16 @@ keymap = [
         "g",
         "f",
     ], run = "follow", desc = "Follow hovered symlink" },
+
+    { on = [
+        "g",
+        "o",
+    ], run = "plugin duckdb -open", desc = "Open with duckdb" },
+    { on = [
+        "g",
+        "u",
+    ], run = "plugin duckdb -ui", desc = "Open with duckdb UI" },
+
 
     # Tabs
     { on = [
@@ -273,6 +472,87 @@ keymap = [
 
     # Tasks
     { on = "w", run = "tasks:show", desc = "Show task manager" },
+
+    # Zoom In/Out
+    { on = "<C-=>", run = "plugin zoom 1", desc = "Zoom in hovered file" },
+    { on = "<C-->", run = "plugin zoom -1", desc = "Zoom out hovered file" },
+
+    # Rotate
+    { on = "R", run = "plugin rotate-image", desc = "Rotate images" },
+
+    # Moust
+    { on = "M", run = "plugin mount" },
+
+    # Chmod
+    { on = [
+        "c",
+        "m",
+    ], run = "plugin chmod", desc = "Chmod on selected files" },
+
+    # Git diff
+    { on = [
+        "g",
+        "t",
+    ], run = "plugin diff", desc = "Diff the selected with the hovered file" },
+
+    # Lazy git
+    { on = [
+        "g",
+        "i",
+    ], run = "plugin lazygit", desc = "Run lazygit in the current directory" },
+
+    # File compression
+    { on = [
+        "c",
+        "a",
+        "a",
+    ], run = "plugin compress", desc = "Archive selected files" },
+    { on = [
+        "c",
+        "a",
+        "p",
+    ], run = "plugin compress -p", desc = "Archive selected files (password)" },
+    { on = [
+        "c",
+        "a",
+        "h",
+    ], run = "plugin compress -ph", desc = "Archive selected files (password+header)" },
+    { on = [
+        "c",
+        "a",
+        "l",
+    ], run = "plugin compress -l", desc = "Archive selected files (compression level)" },
+    { on = [
+        "c",
+        "a",
+        "u",
+    ], run = "plugin compress -phl", desc = "Archive selected files (password+header+level)" },
+
+    # File conversion
+    { on = [
+        "c",
+        "i",
+        "p",
+    ], run = "plugin convert -- --extension='png'", desc = "Convert selected files to PNG" },
+    { on = [
+        "c",
+        "i",
+        "j",
+    ], run = "plugin convert -- --extension='jpg'", desc = "Convert selected files to JPG" },
+    { on = [
+        "c",
+        "i",
+        "w",
+    ], run = "plugin convert -- --extension='webp'", desc = "Convert selected files to WebP" },
+    { on = [
+        "c",
+        "p",
+    ], run = "plugin pandoc", desc = "Pandoc: Interactive Convert" },
+
+    { on = [
+        "y",
+        "r",
+    ], run = "plugin rsync -- --remember --interactive", desc = "Copy files using rsync (interactive)" },
 
     # Help
     { on = "~", run = "help", desc = "Open help" },

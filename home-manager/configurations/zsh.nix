@@ -69,7 +69,6 @@ in
         "uv"
         "vscode"
         "xcode"
-        "yarn"
       ];
     };
     envExtra = ''
