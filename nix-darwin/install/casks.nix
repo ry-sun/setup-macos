@@ -23,6 +23,9 @@
   "adobe-creative-cloud"
   "discord"
 
+  # Office
+  "libreoffice"
+
   # Code Agents
   "codex"
   "codex-app"
