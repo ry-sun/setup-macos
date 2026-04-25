@@ -2,7 +2,7 @@
 {
   programs.git = {
     enable = true;
-    package = pkgs.gitFull;
+    package = pkgs.git;
     lfs.enable = true;
     settings = {
       user = {

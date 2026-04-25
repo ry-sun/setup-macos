@@ -7,7 +7,7 @@ pkgs: with pkgs; [
 
   # Developer Tools
   ## Github Related
-  gitFull
+  git
   git-lfs # LFS support
   gitoxide
   gitflow
@@ -62,7 +62,7 @@ pkgs: with pkgs; [
   epub-thumbnailer
 
   ## Torrent Tools
-  # transmission_4
+  transmission_4
 
   ## OpenDocument & Markdown & Document Tools
   odt2txt
@@ -73,7 +73,7 @@ pkgs: with pkgs; [
   ## HTML & Browser
   w3m
   lynx
-  elinks
+  # elinks
 
   ## Table (csv, xls, xlsx) Tools
   xlsx2csv
@@ -83,7 +83,8 @@ pkgs: with pkgs; [
   librsvg
   imagemagick
   djvulibre
-  ffmpeg_6-full
+  # ffmpeg-full
+  ffmpeg
   ffmpegthumbnailer
 
   ## Font Tools

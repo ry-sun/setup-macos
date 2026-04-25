@@ -9,24 +9,35 @@
   # Swift
   "swiftformat-for-xcode"
 
-  # softwares
-  "bobhelper"
-  "iterm2"
+  # Terminal
   "ghostty"
+  "iterm2"
+
+  # Office / Tools
+  "libreoffice"
+  "adobe-creative-cloud"
   "iina"
+  "aldente"
+  "cap"
+
+  # AI
   "chatgpt"
   "claude"
   "chatgpt-atlas"
-  "aldente"
-  "papers"
-  "zoom"
-  "adobe-creative-cloud"
-  "discord"
 
-  # Office
-  "libreoffice"
+  # Communication
+  "zoom"
+  "discord"
+  "slack"
+
+  # Productivity
+  "papers"
+
+  # Translator
+  "bobhelper"
 
   # Code Agents
   "codex"
   "codex-app"
+  "codexbar"
 ]
