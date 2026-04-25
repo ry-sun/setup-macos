@@ -1,5 +1,5 @@
 # Basic
-model = "gpt-5.4"
+model = "gpt-5.5"
 model_reasoning_effort = "medium"
 personality = "pragmatic"
 check_for_update_on_startup = true
@@ -58,6 +58,7 @@ skill_mcp_dependency_install = true
 smart_approvals = true
 undo = true
 unified_exec = true
+memories = true
 
 
 # Plugins
@@ -70,7 +71,21 @@ enabled = true
 [plugins."browser-use@openai-bundled"]
 enabled = true
 
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
 [marketplaces.openai-bundled]
-last_updated = "2026-04-24T06:49:03Z"
+last_updated = "2026-04-25T10:44:13Z"
 source_type = "local"
 source = "~/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-04-24T07:50:36Z"
+source_type = "local"
+source = "~/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
