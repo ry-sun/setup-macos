@@ -113,6 +113,7 @@ preloaders = [
     { mime = "application/sqlite3", run = "sqlite-preview" },
     { url = "*.{sqlite,sqlite3}", run = "sqlite-preview" },
     # DuckDB
+    { url = "*.csv", run = "duckdb" },
     { url = "*.{tsv,parquet,xlsx}", run = "duckdb" },
     # Blender
     { url = "*.blend", run = "blender-preview" },
@@ -139,7 +140,7 @@ previewers = [
     # Folder
     { url = "*/", run = "folder" },
     # CSV
-    { url = "*.csv", run = "rich-preview" },
+    { url = "*.csv", run = "duckdb" },
     # Markdown
     { url = "*.md", run = "rich-preview" },
     # RST
