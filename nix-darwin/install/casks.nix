@@ -27,6 +27,7 @@
 
   # Communication
   "zoom"
+  "tencent-meeting"
   "discord"
   "slack"
 
@@ -40,4 +41,9 @@
   "codex"
   "codex-app"
   "codexbar"
+
+  # temp
+  "blender"
+  "baidunetdisk"
+  "wpsoffice-cn"
 ]

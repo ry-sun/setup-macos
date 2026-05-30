@@ -24,6 +24,7 @@ pkgs: with pkgs; [
   ## Text Editor, File Explorer, & Seesion Controlor
   neovim
   tmux
+  zellij
   yazi
   (ranger.override {
     imagePreviewSupport = true;
@@ -49,6 +50,11 @@ pkgs: with pkgs; [
   zoxide
   clock-rs
   pay-respects
+
+  # Docker tools
+  docker
+  docker-compose
+  colima
 
   ## Archive Tools
   atool
@@ -83,8 +89,7 @@ pkgs: with pkgs; [
   librsvg
   imagemagick
   djvulibre
-  # ffmpeg-full
-  ffmpeg
+  ffmpeg-full
   ffmpegthumbnailer
 
   ## Font Tools
@@ -169,4 +174,5 @@ pkgs: with pkgs; [
 
   ##AI agents
   codex
+  rtk
 ]
