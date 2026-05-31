@@ -1,6 +1,7 @@
 # A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
-"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+
+#:schema https://yazi-rs.github.io/schemas/yazi.json
 
 [mgr]
 ratio = [3, 5, 10]
@@ -105,7 +106,7 @@ rules = [
 prepend_fetchers = [
     { id = "git", url = "*", run = "git", group = "git" },
     { id = "git", url = "*/", run = "git", group = "git" },
-    { id = "ffmpeg_stats", mime = "video/*", run = "ffmpeg-stats" },
+    { id = "ffmpeg_stats", mime = "video/*", run = "ffmpeg-stats", group = "mime" },
 ]
 preloaders = [
     # SQLite
@@ -116,8 +117,7 @@ preloaders = [
     { url = "*.csv", run = "duckdb" },
     { url = "*.{tsv,parquet,xlsx}", run = "duckdb" },
     # Blender
-    { url = "*.blend", run = "blender-preview" },
-    { url = "*.blend1", run = "blender-preview" },
+    { url = "*.{blend1,blend}", run = "blender-preview" },
     # 3d objects
     { url = "*.{3mf,obj,pts,ply,stl,step,stp}", run = "f3d-preview" },
     # Image
