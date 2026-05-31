@@ -26,6 +26,7 @@
   imports = [
     ./configurations/bash.nix
     ./configurations/bat.nix
+    ./configurations/biome.nix
     ./configurations/btop.nix
     ./configurations/c.nix
     ./configurations/clcokRs.nix

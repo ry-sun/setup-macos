@@ -1,0 +1,67 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.4.13/schema.json",
+    "assist": {
+        "enabled": true,
+        "actions": {
+            "recommended": true
+        }
+    },
+    "files": {
+        "ignoreUnknown": true,
+        "maxSize": 10485760
+    },
+    "formatter": {
+        "enabled": true,
+        "attributePosition": "auto",
+        "bracketSameLine": true,
+        "bracketSpacing": true,
+        "expand": "auto",
+        "formatWithErrors": true,
+        "indentStyle": "space",
+        "indentWidth": 2,
+        "lineEnding": "lf",
+        "lineWidth": 120,
+        "trailingNewline": true,
+        "useEditorconfig": true
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true
+        }
+    },
+    "vcs": {
+        "enabled": true,
+        "clientKind": "git",
+        "defaultBranch": "main",
+        "useIgnoreFile": false
+    },
+    "css": {
+        "parser": {
+            "allowWrongLineComments": false,
+            "cssModules": true,
+            "tailwindDirectives": true
+        }
+    },
+    "html": {
+        "parser": {
+            "interpolation": true
+        },
+        "experimentalFullSupportEnabled": true
+    },
+    "javascript": {
+        "parser": {
+            "gritMetavariables": true,
+            "jsxEverywhere": false,
+            "unsafeParameterDecoratorsEnabled": true
+        },
+        "jsxRuntime": "reactClassic",
+        "experimentalEmbeddedSnippetsEnabled": true
+    },
+    "json": {
+        "parser": {
+            "allowComments": false,
+            "allowTrailingCommas": false
+        }
+    }
+}
