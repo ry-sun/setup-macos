@@ -60,8 +60,11 @@
     },
     "json": {
         "parser": {
-            "allowComments": false,
-            "allowTrailingCommas": false
+            "allowComments": true,
+            "allowTrailingCommas": true
+        },
+        "formatter": {
+            "trailingCommas": "none"
         }
     }
 }
