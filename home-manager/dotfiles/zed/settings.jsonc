@@ -506,6 +506,14 @@
   },
   "language_servers": [],
   "languages": {
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
+      },
+      "formatter": { "language_server": { "name": "biome" } },
+      "tab_size": 2
+    },
     "JSON": {
       "formatter": { "language_server": { "name": "biome" } },
       "language_servers": ["biome", "..."],
@@ -516,7 +524,21 @@
       "language_servers": ["biome", "..."],
       "tab_size": 2
     },
-    "JavaScript": {
+    "Nix": {
+      "language_servers": ["nil", "!nixd"],
+      "formatter": {
+        "external": {
+          "command": "alejandra",
+          "arguments": ["--quiet", "--"]
+        }
+      }
+    },
+    "Rust": {
+      "formatter": { "language_server": { "name": "rust-analyzer" } },
+      "language_servers": ["rust-analyzer"],
+      "tab_size": 4
+    },
+    "TSX": {
       "code_actions_on_format": {
         "source.fixAll.biome": true,
         "source.organizeImports.biome": true
@@ -531,30 +553,36 @@
       },
       "formatter": { "language_server": { "name": "biome" } },
       "tab_size": 2
-    },
-    "TSX": {
-      "code_actions_on_format": {
-        "source.fixAll.biome": true,
-        "source.organizeImports.biome": true
-      },
-      "formatter": { "language_server": { "name": "biome" } },
-      "tab_size": 2
     }
   },
-  "lsp": {},
+  "lsp": {
+    "rust-analyzer": {}
+  },
 
   // Extensions
   "auto_install_extensions": {
     // Language
     "html": true,
     "toml": true,
-    "biome": true
+    "biome": true,
+    "nix": true,
+
+    // Themes
+    "catppuccin": true,
+    "catppuccin-icons": true,
+    "material-icon-theme": true
   },
   "auto_update_extensions": {
     // Language
     "html": true,
     "toml": true,
-    "biome": true
+    "biome": true,
+    "nix": true,
+
+    // Themes
+    "catppuccin": true,
+    "catppuccin-icons": true,
+    "material-icon-theme": true
   },
 
   // Collaborate
