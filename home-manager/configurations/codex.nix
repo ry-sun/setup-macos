@@ -2,6 +2,7 @@
 {
   programs.codex = {
     enable = true;
+    package = null;
     enableMcpIntegration = true;
   };
 

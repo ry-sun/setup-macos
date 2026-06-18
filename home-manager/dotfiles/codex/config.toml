@@ -1,6 +1,6 @@
 # Basic
 model = "gpt-5.5"
-model_reasoning_effort = "medium"
+model_reasoning_effort = "high"
 personality = "pragmatic"
 check_for_update_on_startup = true
 
@@ -9,19 +9,16 @@ allow_login_shell = true
 approval_policy = "on-request"
 web_search = "cached"
 
+[history]
+persistence = "save-all"
+
+approvals_reviewer = "user"
+service_tier = "default"
+notify = ["~/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+
 # TUI Settings
 file_opener = "none"
 hide_agent_reasoning = false
-
-approvals_reviewer = "user"
-
-notify = [
-    "~/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
-    "turn-ended"
-]
-
-[history]
-persistence = "save-all"
 
 [tui]
 alternate_screen = "auto"
@@ -42,6 +39,12 @@ theme = "dracula"
 
 [tui.model_availability_nux]
 "gpt-5.5" = 4
+
+# memories Settings
+[memories]
+disable_on_external_context = true
+generate_memories = true
+use_memories = true
 
 # Sub-Agents Settings
 [agents]
@@ -70,15 +73,11 @@ undo = true
 unified_exec = true
 memories = true
 goals = true
-js_repl = false
 chronicle = true
-
+js_repl = false
 
 # Plugins
 [plugins."github@openai-curated"]
-enabled = true
-
-[plugins."computer-use@openai-bundled"]
 enabled = true
 
 [plugins."documents@openai-primary-runtime"]
@@ -93,44 +92,45 @@ enabled = true
 [plugins."superpowers@openai-curated"]
 enabled = true
 
-[plugins."browser@openai-bundled"]
-enabled = true
-
 [plugins."chrome@openai-bundled"]
 enabled = true
 
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-06-02T04:50:03Z"
+last_updated = "2026-06-15T00:50:14Z"
 source_type = "local"
 source = "~/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-02T04:32:08Z"
+last_updated = "2026-06-18T09:40:55Z"
 source_type = "local"
 source = "~/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
-[mcp_servers.bleander_mcp]
-args = ["--directory", "$HOME/blender_mcp/mcp", "run", "blender-mcp"]
-command = "uv"
-enabled = true
-
 [mcp_servers.node_repl]
 args = []
-command = "/Applications/Codex.app/Contents/Resources/node_repl"
+command = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node_repl"
 startup_timeout_sec = 120
 
 [mcp_servers.node_repl.env]
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
-NODE_REPL_NODE_MODULE_DIRS = ""
-NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/node"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "~/.codex"
 CODEX_HOME = "~/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "0b0d41e7a14a4903d2f95b0b3f427ed796b12c8edca2fa392a03df43997075ae"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "eb55d24cf065cd5311af6f99b16bade2b7a670790ff2db9accf60d012dd55dd1"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-SKY_CUA_SERVICE_PATH = "~/.codex/plugins/cache/openai-bundled/computer-use/1.0.799/Codex Computer Use.app"
+BROWSER_USE_CODEX_APP_VERSION = "26.611.62324"
 CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
 
 [desktop]
@@ -142,41 +142,48 @@ keepRemoteControlAwakeWhilePluggedIn = true
 git-pull-request-merge-method = "squash"
 selected-avatar-id = "stacky"
 conversationDetailMode = "STEPS_COMMANDS"
+show-context-window-usage = true
+defaultTerminalLocation = "right"
+notifications-turn-mode = "always"
+appearanceLightCodeThemeId = "raycast"
+appearanceDarkCodeThemeId = "catppuccin"
+appearanceTheme = "light"
 
 [desktop.appearanceLightChromeTheme]
-accent = "#339cff"
+accent = "#ff6363"
 contrast = 45
-ink = "#0d0d0d"
+ink = "#030303"
 opaqueWindows = false
 surface = "#ffffff"
 
 [desktop.appearanceLightChromeTheme.fonts]
-code = "'JetBrains Mono', 'JetBrainsMono Nerd Font Propo', Menlo, Monaco, 'Courier New', monospace"
-ui = "JetBrainsMono Nerd Font Propo"
+code = '"Jetbrains Mono"'
+ui = "Inter"
 
 [desktop.appearanceLightChromeTheme.semanticColors]
-diffAdded = "#00a240"
-diffRemoved = "#ba2623"
-skill = "#924ff7"
+diffAdded = "#006b4f"
+diffRemoved = "#b12424"
+skill = "#9a1b6e"
 
 [desktop.appearanceDarkChromeTheme]
-accent = "#339cff"
+accent = "#cba6f7"
 contrast = 60
-ink = "#ffffff"
+ink = "#cdd6f4"
 opaqueWindows = false
-surface = "#181818"
+surface = "#1e1e2e"
 
 [desktop.appearanceDarkChromeTheme.fonts]
-code = "'JetBrains Mono', 'JetBrainsMono Nerd Font Propo', Menlo, Monaco, 'Courier New', monospace"
-ui = "JetBrainsMono Nerd Font Propo"
 
 [desktop.appearanceDarkChromeTheme.semanticColors]
-diffAdded = "#40c977"
-diffRemoved = "#fa423e"
-skill = "#ad7bf9"
+diffAdded = "#a6e3a1"
+diffRemoved = "#f38ba8"
+skill = "#cba6f7"
 
 [desktop.open-in-target-preferences]
 global = "zed"
 
-[memories]
-disable_on_external_context = true
+[projects."/Users/rysun/Documents/Codex/2026-06-18/inspect-all-changes-in-this-repo"]
+trust_level = "trusted"
+
+[projects."/Users/rysun/.config/setup-macos"]
+trust_level = "trusted"
