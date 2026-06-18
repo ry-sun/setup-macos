@@ -432,7 +432,7 @@ keymap = [
     ], run = "cd ~/Projects", desc = "Go Projects" },
     { on = [
         "g",
-        "d",
+        "D",
     ], run = "cd ~/Documents", desc = "Go Documents" },
     { on = [
         "g",
