@@ -41,6 +41,7 @@
   "codex"
   "codex-app"
   "codexbar"
+  "google-chrome"
 
   # temp
   "blender"
