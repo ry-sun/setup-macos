@@ -181,9 +181,3 @@ skill = "#cba6f7"
 
 [desktop.open-in-target-preferences]
 global = "zed"
-
-[projects."/Users/rysun/Documents/Codex/2026-06-18/inspect-all-changes-in-this-repo"]
-trust_level = "trusted"
-
-[projects."/Users/rysun/.config/setup-macos"]
-trust_level = "trusted"
