@@ -1,9 +1,13 @@
-pkgs: with pkgs; [
+pkgs:
+with pkgs; [
   # Shell
   zsh
   bash
   bash-completion
   oh-my-posh
+
+  # Macos
+  dockutil
 
   # Developer Tools
   ## Github Related
@@ -173,6 +177,5 @@ pkgs: with pkgs; [
   enchant
 
   ##AI agents
-  codex
-  rtk
+  # codex # cache is unavailable
 ]

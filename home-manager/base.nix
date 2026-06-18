@@ -1,6 +1,8 @@
-{ pkgs, args, ... }:
-
 {
+  pkgs,
+  args,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = args.user;
@@ -32,6 +34,7 @@
     ./configurations/clcokRs.nix
     ./configurations/codex.nix
     ./configurations/diff-so-fancy.nix
+    ./configurations/docutils.nix
     ./configurations/editorconfig.nix
     ./configurations/eza.nix
     ./configurations/fzf.nix

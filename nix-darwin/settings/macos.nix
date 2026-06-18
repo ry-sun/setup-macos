@@ -1,5 +1,4 @@
-{ args, ... }:
-{
+{args, ...}: {
   # Setup Time zone
   time.timeZone = "Asia/Shanghai";
 
@@ -69,10 +68,11 @@
       "/System/Applications/iPhone Mirroring.app"
       "/System/Applications/System Settings.app"
       "/Applications/Loon.app"
-      "/Applications/ChatGPT Atlas.app"
+      "${args.home}/Weblocs/ChatGPT.webloc"
+      "/Applications/Codex.app"
     ];
     dock.persistent-others = [
-      "/Users/rysun/Library/Mobile Documents/com~apple~CloudDocs/Downloads"
+      "${args.home}/Library/Mobile Documents/com~apple~CloudDocs/Downloads"
       "${args.home}/Documents"
     ];
     dock.show-recents = true;

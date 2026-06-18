@@ -22,7 +22,7 @@
 
   # AI
   "chatgpt"
-  "claude"
+  # "claude"
   "chatgpt-atlas"
 
   # Communication
@@ -45,5 +45,4 @@
   # temp
   "blender"
   "baidunetdisk"
-  "wpsoffice-cn"
 ]
