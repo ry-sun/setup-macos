@@ -236,15 +236,6 @@
           "background": "#f6553c",
           "trailing_diamond": "",
           "template": "  {{ .Full }} "
-        },
-        {
-          "type": "docker",
-          "style": "diamond",
-          "powerline_symbol": "",
-          "foreground": "#000000",
-          "background": "#0B59E7",
-          "template": "  {{ .Context }} ",
-          "display_mode": "files"
         }
       ]
     },
