@@ -17,13 +17,9 @@
   "libreoffice"
   "adobe-creative-cloud"
   "iina"
+  "blender"
   "aldente"
   "cap"
-
-  # AI
-  "chatgpt"
-  # "claude"
-  "chatgpt-atlas"
 
   # Communication
   "zoom"
@@ -37,13 +33,18 @@
   # Translator
   "bobhelper"
 
+  # AI
+  "chatgpt"
+  "claude"
+  "chatgpt-atlas"
+
   # Code Agents
   "codex"
   "codex-app"
   "codexbar"
   "google-chrome"
 
-  # temp
-  "blender"
-  "baidunetdisk"
+  # GFW
+  "surge"
+  "clash-verge-rev"
 ]
