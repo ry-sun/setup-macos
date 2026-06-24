@@ -6,15 +6,19 @@ check_for_update_on_startup = true
 
 # Command Settings
 allow_login_shell = true
-approval_policy = "on-request"
+approval_policy = "never"
 web_search = "cached"
+approvals_reviewer = "user"
+sandbox_mode = "danger-full-access"
+
+notify = ["~/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+service_tier = "default"
 
 [history]
 persistence = "save-all"
 
 approvals_reviewer = "user"
 service_tier = "default"
-notify = ["~/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
 # TUI Settings
 file_opener = "none"
@@ -53,15 +57,15 @@ max_threads = 8
 
 # Analytics Settings
 [analytics]
-enable = true
+enable = false
 
 # see https://developers.openai.com/codex/config-basic#supported-features
 [features]
 app = true
 codex_git_commit = true
-hooks = false
+hooks = true
 enable_request_compression = true
-fast_mode = false
+fast_mode = true
 multi_agent = true
 personality = true
 prevent_idle_sleep = true
@@ -74,7 +78,7 @@ unified_exec = true
 memories = true
 goals = true
 chronicle = true
-js_repl = false
+js_repl = true
 
 # Plugins
 [plugins."github@openai-curated"]
@@ -104,13 +108,16 @@ enabled = true
 [plugins."browser@openai-bundled"]
 enabled = true
 
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-06-15T00:50:14Z"
+last_updated = "2026-06-24T05:50:31Z"
 source_type = "local"
 source = "~/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-18T09:40:55Z"
+last_updated = "2026-06-24T07:26:07Z"
 source_type = "local"
 source = "~/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
@@ -125,12 +132,12 @@ NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_nod
 NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "~/.codex"
 CODEX_HOME = "~/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "eb55d24cf065cd5311af6f99b16bade2b7a670790ff2db9accf60d012dd55dd1"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "5504c0782b5c86b7dd08314045b9843e973a230e1be8f7e2e0ba3716fc63c55e"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.611.62324"
+BROWSER_USE_CODEX_APP_VERSION = "26.616.81150"
 CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
 
 [desktop]
