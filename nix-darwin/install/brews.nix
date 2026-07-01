@@ -12,9 +12,6 @@
   # 3d Viewer
   "f3d"
 
-  # Utilities
-  "remindctl"
-
   # Lint & Format
   "cspell"
 ]
