@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   programs.ghostty = {
     enable = true;
     enableBashIntegration = true;
@@ -15,7 +14,7 @@
       font-shaping-break = "cursor";
 
       # Key binding
-      keybind = [ "global:super+grave_accent=toggle_quick_terminal" ];
+      keybind = ["global:super+grave_accent=toggle_quick_terminal"];
 
       # Theme
       theme = "light:Xcode WWDC,dark:Xcode Dark hc";
@@ -76,7 +75,7 @@
 
       # Qucik Terminal
       quick-terminal-position = "top";
-      quick-terminal-size = "50%,500px";
+      quick-terminal-size = "70%,1024px";
       quick-terminal-screen = "mouse";
       quick-terminal-autohide = false;
       quick-terminal-space-behavior = "move";
