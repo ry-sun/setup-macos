@@ -9,16 +9,22 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
   let
-    args = import ./args.nix;
+    localArgsPath = builtins.getEnv "SETUP_MACOS_NIX_DARWIN_ARGS";
+    argsPath =
+      if localArgsPath != "" && builtins.pathExists localArgsPath then
+        localArgsPath
+      else
+        ./args.nix;
+    args = import argsPath;
   in
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#RySun-Macbook-Air-M2
     darwinConfigurations."${args.hostname}" = nix-darwin.lib.darwinSystem {
       specialArgs = {
-          inherit self;
-          inherit args;
-        };
+        inherit self;
+        inherit args;
+      };
       modules = [ ./base.nix ];
     };
   };

@@ -19,7 +19,7 @@ let
         continue
       fi
 
-      if ! echo "$installed_extensions" | grep -qF "$extension"; then
+      if ! printf '%s\n' "$installed_extensions" | grep -qxF "$extension"; then
         "$code_bin" --install-extension "$extension" | tee -a "$activation_log"
       fi
     done < "$extensions_file"

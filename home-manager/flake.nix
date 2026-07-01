@@ -13,12 +13,18 @@
   outputs =
     { nixpkgs, home-manager, ... }:
     let
-      args = import ./args.nix;
+      localArgsPath = builtins.getEnv "SETUP_MACOS_HOME_MANAGER_ARGS";
+      argsPath =
+        if localArgsPath != "" && builtins.pathExists localArgsPath then
+          localArgsPath
+        else
+          ./args.nix;
+      args = import argsPath;
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeConfigurations."rysun" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."${args.user}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,

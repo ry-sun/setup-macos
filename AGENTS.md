@@ -7,7 +7,7 @@ This repository provisions a macOS development machine with Nix, nix-darwin, Hom
 - `entry.sh`, `install.sh`, and `switch.sh` are the main bootstrap and update entrypoints.
 - `nix-darwin/` contains system-level configuration. Use `nix-darwin/settings/` for macOS, shell, and Homebrew behavior, and `nix-darwin/install/` for formulas, casks, fonts, and Mac App Store apps.
 - `home-manager/` contains user-level configuration. Add per-tool modules in `home-manager/configurations/`, packages in `home-manager/install.nix`, and linked editor/tool settings in `home-manager/dotfiles/`.
-- `args.nix` files contain generated user-specific values; avoid committing private or machine-only changes unless intentional.
+- `args.nix` files contain tracked placeholders; `args.local.nix` files contain generated user-specific values and should stay untracked.
 
 ## Build, Test, and Development Commands
 
@@ -33,4 +33,4 @@ Pull requests should include a concise summary, affected paths, validation comma
 
 ## Security & Configuration Tips
 
-Do not commit secrets, access tokens, private hostnames, or personal email changes accidentally. Review `args.nix`, SSH, Git, and app configuration diffs carefully before committing.
+Do not commit secrets, access tokens, private hostnames, or personal email changes accidentally. Review `args.local.nix`, SSH, Git, and app configuration diffs carefully before committing.

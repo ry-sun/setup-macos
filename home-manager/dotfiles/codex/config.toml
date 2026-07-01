@@ -1,6 +1,6 @@
 # Basic
 model = "gpt-5.5"
-model_reasoning_effort = "high"
+model_reasoning_effort = "xhigh"
 personality = "pragmatic"
 check_for_update_on_startup = true
 
@@ -11,8 +11,6 @@ web_search = "cached"
 approvals_reviewer = "user"
 sandbox_mode = "danger-full-access"
 service_tier = "default"
-
-notify = ["~/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
 [history]
 persistence = "save-all"
@@ -28,7 +26,8 @@ hide_agent_reasoning = false
 alternate_screen = "auto"
 animations = true
 notifications = true
-otification_method = "auto"
+notification_method = "auto"
+notify = ["~/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 show_tooltips = true
 status_line = [
     "model-with-reasoning",
@@ -52,7 +51,7 @@ use_memories = true
 
 # Sub-Agents Settings
 [agents]
-max_depth = 1
+max_depth = 2
 max_threads = 8
 
 # Analytics Settings

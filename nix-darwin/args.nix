@@ -1,9 +1,10 @@
+# Tracked placeholder values. Local generated values live in args.local.nix.
 rec {
-  user = "rysun";
-  firstname = "Ryan";
-  lastname = "Sun";
+  user = "your-user";
+  firstname = "First";
+  lastname = "Last";
   fullname = "${firstname} ${lastname}";
   home = "/Users/${user}";
-  hostname = "ryan-sun-personal-macbook-air";
-  email = "ruiyangsun02@gmail.com";
+  hostname = "your-hostname";
+  email = "you@example.com";
 }

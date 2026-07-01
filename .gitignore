@@ -78,4 +78,8 @@ $RECYCLE.BIN/
 
 # Begin of custom
 .vscode
+
+# Generated local machine-specific Nix args
+nix-darwin/args.local.nix
+home-manager/args.local.nix
 # End of custom

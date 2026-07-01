@@ -50,7 +50,7 @@ This will:
 
 1. Install the Nix package manager if it is not already available
 2. Clone or update this repository at `~/.config/setup-macos`
-3. Run `install.sh`, which collects personal information and writes both `nix-darwin/args.nix` and `home-manager/args.nix`
+3. Run `install.sh`, which collects personal information and writes both `nix-darwin/args.local.nix` and `home-manager/args.local.nix`
 4. Install Xcode command line tools and Homebrew
 5. Link `nix-darwin` to `/etc/nix-darwin` and `home-manager` to `~/.config/home-manager`
 6. Apply the `nix-darwin` flake, restart the activation launch daemon, and then run `home-manager switch --impure`
@@ -93,7 +93,7 @@ During installation you will be prompted for:
 3. Desired hostname
 4. Email address
 
-Those values are written into the generated `args.nix` files and reused by both flakes.
+Those values are written into ignored `args.local.nix` files and reused by both flakes. Tracked `args.nix` files contain placeholder values and document the required shape for fresh clones.
 
 ### Switching Configurations
 
@@ -170,7 +170,8 @@ setup-macos/
 ├── install.sh                  # Collect user data, link flakes, apply nix-darwin and home-manager
 ├── switch.sh                   # Update both flakes and switch both configurations
 ├── nix-darwin/                 # System-level macOS and Homebrew configuration
-│   ├── args.nix                # Generated user-specific values for nix-darwin
+│   ├── args.nix                # Tracked placeholder values for nix-darwin
+│   ├── args.local.nix          # Ignored generated user-specific values
 │   ├── base.nix                # Main nix-darwin module
 │   ├── flake.nix               # nix-darwin flake
 │   ├── install/
@@ -183,7 +184,8 @@ setup-macos/
 │       ├── macos.nix           # macOS defaults and host settings
 │       └── shell.nix           # System shell registration and defaults
 ├── home-manager/               # User environment configuration
-│   ├── args.nix                # Generated user-specific values for home-manager
+│   ├── args.nix                # Tracked placeholder values for home-manager
+│   ├── args.local.nix          # Ignored generated user-specific values
 │   ├── base.nix                # Main Home Manager module
 │   ├── flake.nix               # Home Manager flake
 │   ├── install.nix             # User-level package list
@@ -222,6 +224,16 @@ setup-macos/
 2. Edit files under `home-manager/dotfiles/` for linked configs such as Git ignore rules, editor settings, IPython config, iTerm2 config, Codex config, Ranger config, Yazi config, and Zed config
 3. Update `home-manager/base.nix` to add imports, session variables, or session paths
 4. Update generated helper commands such as `vscode-extension-sync` and `yazi-plugin-sync` via their corresponding Home Manager modules
+
+#### Local Identity Values
+
+Run `./install.sh` to generate `nix-darwin/args.local.nix` and `home-manager/args.local.nix`. These files contain machine-specific values such as username, hostname, and email, and are intentionally ignored by Git. Use the tracked `args.nix` files as templates when bootstrapping manually.
+
+Pure flake checks use the tracked placeholders. Activation commands in `install.sh` and `switch.sh` pass the ignored local args path through `--impure` evaluation so the active machine still uses its generated values.
+
+#### Intentional Tradeoffs
+
+This repository favors fast personal-machine bootstrap over a locked-down multi-user distribution model. Mutable upstream updates, direct activation, full-access Codex settings, and plugin/extension sync are intentional operator-trusted workflows. Review those paths before sharing the repo or using it on a machine where repository contents, prompts, browser pages, or plugin sources are not trusted.
 
 #### After Making Changes
 
