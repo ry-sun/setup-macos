@@ -67,7 +67,8 @@
       "/Applications/Ghostty.app"
       "/System/Applications/iPhone Mirroring.app"
       "/System/Applications/System Settings.app"
-      "/Applications/Loon.app"
+      "/Applications/Surge.app"
+      "/Applications/Clash Verge.app"
       "${args.home}/Weblocs/ChatGPT.webloc"
       "/Applications/Codex.app"
     ];
